@@ -1,0 +1,16 @@
+[project]
+name = "agentgymrl"
+version = "0.1.0"
+description = "A library to create tool calling agents using RL"
+readme = "README.md"
+authors = [
+    { name = "Dan Austin", email = "dan@aituning.ai" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.10.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
