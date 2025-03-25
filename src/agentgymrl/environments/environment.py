@@ -1,56 +1,41 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Generic, List, Optional, TypeVar
+from typing import Optional
 
 from agentgymrl.inference.model_output import ModelOutput
 
-STATE = TypeVar("STATE")
-
 
 @dataclass
-class ActionExecutionResult:
-    """Result of executing an agent action in the environment."""
-
-    raw_result: str
-    exception: Optional[Exception] = None
-
-    @property
-    def has_error(self) -> bool:
-        return self.exception is not None
-
-
-@dataclass
-class EnvironmentResult(Generic[STATE]):
+class EnvironmentResult:
     """Result of handling an action in the environment."""
 
-    action_exec_results: Optional[List[ActionExecutionResult]] = None
-    updated_state: Optional[STATE] = None
-    should_end: bool = False
+    should_end_sequence: bool = False
+    tool_call_output: Optional[str] = None
     has_error: bool = False
 
 
-class Environment(Generic[STATE], ABC):
-    """Abstract environment interface that can handle agent outputs and maintain state."""
+class Environment(ABC):
+    """Abstract environment interface that can handle agent outputs and maintain its own state if required.
+
+    It will receive agent outputs and is responsible for updating the environment state and returning a response for the agent if required.
+    """
 
     def __init__(self, env_idx: int = 0):
         self.env_idx = env_idx
 
     @abstractmethod
-    def handle_output(
-        self, current_state: STATE, model_output: ModelOutput
-    ) -> EnvironmentResult[STATE]:
+    def handle_output(self, model_output: ModelOutput) -> EnvironmentResult:
         """
         Process agent output and update the state. This should handle:
-        1. Action execution if an action is present
-        2. State updates for any agent output (e.g., updating conversation history)
+        1. Tool call execution
+        2. Internal state updates (if any)
         3. Deciding whether the environment (& therefore the sequence) should end
 
         Args:
-            current_state: Current environment state
-            model_output: Output from the agent (may or may not contain actions)
+            model_output: Output from the agent
 
         Returns:
-            EnvironmentResult containing updated state and result information
+            EnvironmentResult
         """
 
     @abstractmethod
