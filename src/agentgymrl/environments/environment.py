@@ -39,5 +39,9 @@ class Environment(ABC):
         """
 
     @abstractmethod
+    def get_state(self) -> Optional[dict]:
+        """Get the environment state as a dictionary."""
+
+    @abstractmethod
     def cleanup(self) -> None:
         """Clean up resources when done with this environment."""
