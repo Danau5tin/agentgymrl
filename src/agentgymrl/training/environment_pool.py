@@ -188,6 +188,26 @@ class EnvironmentPool(Generic[T]):
             )
 
         return self.environments[env_idx].handle_output(model_output)
+    
+    def get_state(self, env_idx: int) -> Optional[dict]:
+        """
+        Get the state of a specific environment.
+
+        Args:
+            env_idx: Index of the environment to use
+
+        Returns:
+            State dictionary of the environment
+
+        Raises:
+            IndexError: If env_idx is out of range
+        """
+        if env_idx < 0 or env_idx >= len(self.environments):
+            raise IndexError(
+                f"Environment index {env_idx} out of range (0-{len(self.environments) - 1})"
+            )
+
+        return self.environments[env_idx].get_state()
 
     def cleanup(self) -> None:
         """Clean up resources used by all environments."""
