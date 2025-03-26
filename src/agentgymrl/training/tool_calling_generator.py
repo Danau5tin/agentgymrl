@@ -1,12 +1,12 @@
 import logging
-from dataclasses import dataclass, field
-from typing import List
 
 import torch
 from transformers import PreTrainedModel, PreTrainedTokenizer
 
 from agentgymrl.inference.model_output import ModelOutput
 from agentgymrl.training.environment_pool import EnvironmentPool
+from agentgymrl.training.common_entities.config import AgentInstructions
+from agentgymrl.training.common_entities.results import SampleResult
 from agentgymrl.training.token_handlers.phi_4_mini_instruct import (
     Phi4MiniInstructTokenHandler,
 )
@@ -14,20 +14,6 @@ from agentgymrl.training.tool_call_parsers.phi_4_mini_instruct import (
     Phi4MiniInstructToolCallParser,
 )
 
-
-@dataclass
-class AgentInstructions:
-    sys_msg: str
-    tool_schemas: list[dict[str, any]]
-
-@dataclass
-class SampleResult:
-    """Result of a sample generation."""
-    env_state: dict[str, any]
-    input_ids: torch.Tensor
-    source_mask: torch.Tensor
-    env_call_count: int = 0
-    env_exceptions: List[Exception] = field(default_factory=list)
 
 class ToolCallingGenerator:
     """
