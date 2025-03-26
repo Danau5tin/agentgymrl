@@ -5,8 +5,8 @@ class ToolCall:
     A ToolCall represents a tool call that the agent made.
     """
 
-    def __init__(self, tool_id: str, tool_parameters: dict[str, any]):
-        self.tool_id = tool_id
+    def __init__(self, tool_name: str, tool_parameters: dict[str, any]):
+        self.tool_name = tool_name
         self.tool_parameters = tool_parameters
 
 class ModelOutput:
