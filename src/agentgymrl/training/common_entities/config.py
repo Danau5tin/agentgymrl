@@ -1,5 +1,8 @@
 from dataclasses import dataclass
-from typing import List
+from typing import Callable, List, Optional
+
+from agentgymrl.training.common_entities.results import ToolSampleResult
+from agentgymrl.training.environment_pool import EnvironmentConfig
 
 
 @dataclass
@@ -30,3 +33,14 @@ class ReportingConfig:
             report_to=["wandb"],
             report_every_n_steps=report_every_n_steps
         )
+    
+@dataclass
+class TrainingConfig:
+    hf_model_name: str
+    train_csv_dataset_path: str
+    output_dir: str
+    agent_config: AgentConfig
+    reporting_config: ReportingConfig
+    environment_config: EnvironmentConfig
+    reward_func: Callable[[List[ToolSampleResult]], List[float]]
+    reporting_config: Optional[ReportingConfig] = None
