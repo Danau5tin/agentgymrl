@@ -36,8 +36,10 @@ class ToolCallingGenerator:
         temperature: float = 0.9,
         max_env_calls: int = 20,
         max_new_tokens: int = 1000,
+        log_level: int = logging.INFO,
     ):
         self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(log_level)
 
         self.model = model
         self.tokenizer = tokenizer
