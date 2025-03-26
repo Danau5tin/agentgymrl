@@ -3,9 +3,12 @@ from typing import List
 
 
 @dataclass
-class AgentInstructions:
+class AgentConfig:
     sys_msg: str
     tool_schemas: list[dict[str, any]]
+    temperature: float = 0.9
+    max_env_calls: int = 20
+    max_new_tokens: int = 1000
 
 @dataclass
 class ReportingConfig:

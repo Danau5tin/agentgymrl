@@ -5,7 +5,7 @@ from transformers import PreTrainedModel, PreTrainedTokenizer
 
 from agentgymrl.inference.model_output import ModelOutput
 from agentgymrl.training.environment_pool import EnvironmentPool
-from agentgymrl.training.common_entities.config import AgentInstructions
+from agentgymrl.training.common_entities.config import AgentConfig
 from agentgymrl.training.common_entities.results import SampleResult
 from agentgymrl.training.token_handlers.phi_4_mini_instruct import (
     Phi4MiniInstructTokenHandler,
@@ -31,11 +31,8 @@ class ToolCallingGenerator:
         model: PreTrainedModel,
         tokenizer: PreTrainedTokenizer,
         environment_pool: EnvironmentPool,
-        agent_instructions: AgentInstructions,
+        agent_config: AgentConfig,
         device: torch.device,
-        temperature: float = 0.9,
-        max_env_calls: int = 20,
-        max_new_tokens: int = 1000,
         log_level: int = logging.INFO,
     ):
         self.logger = logging.getLogger(__name__)
@@ -45,19 +42,15 @@ class ToolCallingGenerator:
         self.tokenizer = tokenizer
         self.device = device
         self.environment_pool = environment_pool
-        self.agent_instructions = agent_instructions
-
-        self.temperature = temperature
-        self.max_env_calls = max_env_calls
-        self.max_new_tokens = max_new_tokens
+        self.agent_config = agent_config
 
         self.token_handler = Phi4MiniInstructTokenHandler(tokenizer=tokenizer)  # TODO (AIT-733): Create a factory and handle different models
         self.tool_call_parser = Phi4MiniInstructToolCallParser()  # TODO (AIT-733): Create a factory and handle different models
 
     def _initialize_conversation(self, prompt: str) -> None:
         self.token_handler.start_sequence(
-            sys_msg=self.agent_instructions.sys_msg, 
-            tools=self.agent_instructions.tool_schemas
+            sys_msg=self.agent_config.sys_msg, 
+            tools=self.agent_config.tool_schemas
         )
         self.token_handler.add_user_message(prompt)
         self.token_handler.add_assistant_generation_prompt()
@@ -74,10 +67,10 @@ class ToolCallingGenerator:
         with torch.no_grad():
             outputs = self.model.generate(
                 **inputs,
-                temperature=self.temperature,
+                temperature=self.agent_config.temperature,
                 do_sample=True,
                 pad_token_id=self.tokenizer.eos_token_id, # TODO: Needed?
-                max_new_tokens=self.max_new_tokens,
+                max_new_tokens=self.agent_config.max_new_tokens,
             )
 
         new_token_ids = outputs[0, len(all_token_ids):].tolist()
@@ -100,7 +93,7 @@ class ToolCallingGenerator:
         env_call_count = 0
         env_exceptions = []
 
-        while env_call_count < self.max_env_calls:
+        while env_call_count < self.agent_config.max_env_calls:
             model_output = self._run_inference_on_model()
             env_result = self.environment_pool.handle_output(
                 env_idx=env_idx,
