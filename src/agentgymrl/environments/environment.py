@@ -26,10 +26,10 @@ class Environment(ABC):
     @abstractmethod
     def handle_output(self, model_output: ModelOutput) -> EnvironmentResult:
         """
-        Process agent output and update the state. This should handle:
+        This should handle:
         1. Tool call execution
         2. Internal state updates (if any)
-        3. Deciding whether the environment (& therefore the sequence) should end
+        3. Deciding when the environment (& therefore the sequence generation) should end
 
         Args:
             model_output: Output from the agent
