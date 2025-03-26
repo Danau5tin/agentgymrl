@@ -11,7 +11,11 @@ class EnvironmentResult:
 
     should_end_sequence: bool = False
     tool_call_output: Optional[str] = None
-    has_error: bool = False
+    exception: Optional[Exception] = None
+
+    @property
+    def has_error(self) -> bool:
+        return self.exception is not None
 
 
 class Environment(ABC):
