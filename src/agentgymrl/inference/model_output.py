@@ -9,6 +9,12 @@ class ToolCall:
         self.tool_name = tool_name
         self.tool_parameters = tool_parameters
 
+    def to_dict(self) -> dict:
+        return {
+            "name": self.tool_name,
+            "parameters": self.tool_parameters,
+        }
+
 class ModelOutput:
     """
     A ModelOutput contains the raw content of the output and any tool calls made by the agent.
