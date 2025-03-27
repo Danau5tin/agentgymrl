@@ -39,10 +39,10 @@ class CalculatorState:
 class CalculatorEnvironment(Environment):
     """Environment for calculator agent."""
     
-    def __init__(self):
+    def __init__(self, initial_state: Optional[CalculatorState] = None):
         """Initialize the calculator environment with an empty state."""
         super().__init__()
-        self.state = CalculatorState()
+        self.state = initial_state or CalculatorState()
     
     def handle_output(self, model_output: ModelOutput) -> EnvironmentResult:
         """Process model output and update environment state accordingly."""
