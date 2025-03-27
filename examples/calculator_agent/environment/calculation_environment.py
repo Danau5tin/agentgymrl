@@ -76,8 +76,8 @@ class CalculatorEnvironment(Environment):
             state.add_message("tool", error_msg)
             return EnvironmentResult(
                 should_end_sequence=False,  # Model should continue and try to recover
-                tool_call_output=error_msg,
-                tool_call_exception=e,
+                output_to_show_model=error_msg,
+                exception=e,
             )
     
     def _execute_calculator_call(self, tool_call: ToolCall, state: CalculatorState) -> EnvironmentResult:
@@ -91,7 +91,7 @@ class CalculatorEnvironment(Environment):
             
             return EnvironmentResult(
                 should_end_sequence=False,
-                tool_call_output=tool_call_output,
+                output_to_show_model=tool_call_output,
             )
         except Exception as e:
             tool_call_output = f"Error: {str(e)}"
@@ -99,8 +99,8 @@ class CalculatorEnvironment(Environment):
             
             return EnvironmentResult(
                 should_end_sequence=False,
-                tool_call_output=tool_call_output,
-                tool_call_exception=e,
+                output_to_show_model=tool_call_output,
+                exception=e,
             )
     
     def cleanup(self):

@@ -108,7 +108,7 @@ class ToolCallingGenerator:
                 self.logger.debug("Environment decided to end the sequence")
                 break
 
-            self.token_handler.add_tool_output_message(content=env_result.tool_call_output)
+            self.token_handler.add_tool_output_message(content=env_result.output_to_show_model)
             self.token_handler.add_assistant_generation_prompt()
 
         # Sanity call to cover scenarios such as env ending sequence before the model does

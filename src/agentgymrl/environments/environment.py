@@ -10,7 +10,7 @@ class EnvironmentResult:
     """Result of handling an action in the environment."""
 
     should_end_sequence: bool = False
-    tool_call_output: Optional[str] = None
+    output_to_show_model: Optional[str] = None
     exception: Optional[Exception] = None
 
     @property
