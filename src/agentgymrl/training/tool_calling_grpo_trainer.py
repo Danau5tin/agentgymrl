@@ -1,26 +1,19 @@
-from typing import Any, Dict, List, Tuple
 import logging
+from typing import Any, Dict, List, Tuple
 
-from agentgymrl.training.common_entities.config import TrainingConfig
-from agentgymrl.training.common_entities.results import ToolSampleResult
-from agentgymrl.training.environment_pool import EnvironmentPool
-
-from agentgymrl.training.tool_calling_generator import ToolCallingGenerator
 import torch
-
-from trl import GRPOTrainer, GRPOConfig
+from accelerate.utils import gather, is_peft_model
+from datasets import load_dataset
+from transformers import AutoTokenizer
+from trl import GRPOConfig, GRPOTrainer
 from trl.models import unwrap_model_for_generation
 from trl.trainer.callbacks import SyncRefModelCallback
 from trl.trainer.utils import selective_log_softmax
 
-from transformers import AutoTokenizer
-
-from accelerate.utils import gather, is_peft_model
-
-
-from datasets import load_dataset
-
-
+from agentgymrl.training.common_entities.config import TrainingConfig
+from agentgymrl.training.common_entities.results import ToolSampleResult
+from agentgymrl.training.environment_pool import EnvironmentPool
+from agentgymrl.training.tool_calling_generator import ToolCallingGenerator
 
 
 class ToolCallingGRPOTrainer(GRPOTrainer):
@@ -99,7 +92,6 @@ class ToolCallingGRPOTrainer(GRPOTrainer):
         self._log_details()
 
     def _init_metrics(self) -> None:
-        super()._init_metrics()
         self._metrics["tool_calls_per_sample"] = []
         self._metrics["model_token_ratio"] = []
         self._metrics["model_tokens_percent"] = []

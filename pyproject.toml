@@ -12,6 +12,7 @@ dependencies = [
     "pydantic>=2.10.6",
     "torch>=2.6.0",
     "transformers>=4.50.1",
+    "trl>=0.16.0",
 ]
 
 [build-system]
