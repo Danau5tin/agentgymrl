@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "agentgymrl",
+    "pydantic>=2.10.6",
 ]
 
 [tool.uv.sources]
