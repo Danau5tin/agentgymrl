@@ -1,6 +1,7 @@
 import logging
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, Generic, List, Tuple
 
+from agentgymrl.environments.state import STATE
 import torch
 from accelerate.utils import gather, is_peft_model
 from datasets import load_dataset
@@ -16,7 +17,7 @@ from agentgymrl.training.environment_pool import EnvironmentPool
 from agentgymrl.training.tool_calling_generator import ToolCallingGenerator
 
 
-class ToolCallingGRPOTrainer(GRPOTrainer):
+class ToolCallingGRPOTrainer(GRPOTrainer, Generic[STATE]):
     """
     GRPO Trainer for tool-calling language models.
     This class extends the standard GRPOTrainer to handle the unique aspects
@@ -25,7 +26,7 @@ class ToolCallingGRPOTrainer(GRPOTrainer):
 
     def __init__(
             self,
-            config: TrainingConfig,
+            config: TrainingConfig[STATE],
             peft_config=None,
             log_level: int = logging.INFO,
             **kwargs
@@ -72,11 +73,11 @@ class ToolCallingGRPOTrainer(GRPOTrainer):
         self.reward_weights = torch.tensor([1.0], device=self.accelerator.device)  # Single reward function
 
         with unwrap_model_for_generation(self.model, self.accelerator) as unwrapped_model:
-            self.generator = ToolCallingGenerator(
+            self.generator = ToolCallingGenerator[STATE](
                 model=unwrapped_model,
                 tokenizer=self.tokenizer,
                 agent_config=agent_config,
-                environment_pool=EnvironmentPool(config=config.environment_config),
+                environment_pool=EnvironmentPool[STATE](config=config.environment_config),
                 device=self.accelerator.device,
                 log_level=log_level,
             )
@@ -303,7 +304,7 @@ class ToolCallingGRPOTrainer(GRPOTrainer):
                 )
                 
                 tool_convo_results.append(
-                    ToolSampleResult(
+                    ToolSampleResult[STATE](
                         state=sample.env_state,
                         answer=answers[i],
                         env_exceptions=sample.env_exceptions
@@ -356,7 +357,7 @@ class ToolCallingGRPOTrainer(GRPOTrainer):
             "advantages": advantages
         }
 
-    def _compute_rewards(self, tool_convo_results: List[ToolSampleResult]):
+    def _compute_rewards(self, tool_convo_results: List[ToolSampleResult[STATE]]):
         """
         Compute rewards for each conversation using our single reward function.
 

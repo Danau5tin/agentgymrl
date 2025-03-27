@@ -4,6 +4,7 @@ import logging
 from typing import Generic, Optional, List, Dict, Any, Type, TypeVar
 
 from agentgymrl.environments.environment import Environment, EnvironmentResult
+from agentgymrl.environments.state import STATE
 from agentgymrl.inference.model_output import ModelOutput
 
 
@@ -57,7 +58,7 @@ class EnvironmentConfig(Generic[T]):
             )
 
 
-class EnvironmentPool(Generic[T]):
+class EnvironmentPool(Generic[STATE]):
     """
     This class is responsible for creating and cleaning up environments,
     as well as distributing model outputs to the correct environment.
@@ -65,7 +66,7 @@ class EnvironmentPool(Generic[T]):
 
     def __init__(
         self,
-        config: EnvironmentConfig[T],
+        config: EnvironmentConfig,
     ):
         """
         Initialize a pool of environments.
@@ -189,7 +190,7 @@ class EnvironmentPool(Generic[T]):
 
         return self.environments[env_idx].handle_output(model_output)
     
-    def get_state(self, env_idx: int) -> Optional[dict]:
+    def get_state(self, env_idx: int) -> Optional[STATE]:
         """
         Get the state of a specific environment.
 

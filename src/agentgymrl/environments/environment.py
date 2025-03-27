@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Optional
+from typing import Generic, Optional
 
+from agentgymrl.environments.state import STATE
 from agentgymrl.inference.model_output import ModelOutput
 
 
@@ -18,7 +19,7 @@ class EnvironmentResult:
         return self.exception is not None
 
 
-class Environment(ABC):
+class Environment(Generic[STATE], ABC):
     """Abstract environment interface that can handle agent outputs and maintain its own state if required.
 
     It will receive agent outputs and is responsible for updating the environment state and returning a response for the agent if required.
@@ -43,8 +44,8 @@ class Environment(ABC):
         """
 
     @abstractmethod
-    def get_state(self) -> Optional[dict]:
-        """Get the environment state as a dictionary."""
+    def get_state(self) -> Optional[STATE]:
+        """Get the current state of this environment."""
 
     @abstractmethod
     def cleanup(self) -> None:

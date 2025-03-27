@@ -1,5 +1,7 @@
 import logging
+from typing import Generic
 
+from agentgymrl.environments.state import STATE
 import torch
 from transformers import PreTrainedModel, PreTrainedTokenizer
 
@@ -15,7 +17,7 @@ from agentgymrl.training.tool_call_parsers.phi_4_mini_instruct import (
 )
 
 
-class ToolCallingGenerator:
+class ToolCallingGenerator(Generic[STATE]):
     """
     Handles the sequential generation process for tool-calling models.
     This class manages:
@@ -30,7 +32,7 @@ class ToolCallingGenerator:
         self,
         model: PreTrainedModel,
         tokenizer: PreTrainedTokenizer,
-        environment_pool: EnvironmentPool,
+        environment_pool: EnvironmentPool[STATE],
         agent_config: AgentConfig,
         device: torch.device,
         log_level: int = logging.INFO,
@@ -87,7 +89,7 @@ class ToolCallingGenerator:
             self,
             prompt: str,
             env_idx: int = 0,
-    ) -> SampleResult:
+    ) -> SampleResult[STATE]:
         
         self._initialize_conversation(prompt)
         env_call_count = 0
@@ -115,7 +117,7 @@ class ToolCallingGenerator:
         self.token_handler.add_end_of_sequence_if_not_present()
 
         env_state = self.environment_pool.get_state(env_idx=env_idx)
-        return SampleResult(
+        return SampleResult[STATE](
             env_state=env_state,
             input_ids=torch.tensor(self.token_handler.get_all_tokens(), device=self.device),
             source_mask=torch.tensor(self.token_handler.get_source_mask(), device=self.device),

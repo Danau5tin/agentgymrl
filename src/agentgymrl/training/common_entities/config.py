@@ -1,6 +1,7 @@
 from dataclasses import dataclass
-from typing import Callable, List, Optional
+from typing import Callable, Generic, List, Optional
 
+from agentgymrl.environments.state import STATE
 from agentgymrl.training.common_entities.results import ToolSampleResult
 from agentgymrl.training.environment_pool import EnvironmentConfig
 
@@ -35,12 +36,12 @@ class ReportingConfig:
         )
     
 @dataclass
-class TrainingConfig:
+class TrainingConfig(Generic[STATE]):
     hf_model_name: str
     train_csv_dataset_path: str
     output_dir: str
     agent_config: AgentConfig
     reporting_config: ReportingConfig
     environment_config: EnvironmentConfig
-    reward_func: Callable[[List[ToolSampleResult]], List[float]]
+    reward_func: Callable[[List[ToolSampleResult[STATE]]], List[float]]
     reporting_config: Optional[ReportingConfig] = None
