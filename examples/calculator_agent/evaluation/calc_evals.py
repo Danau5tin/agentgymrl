@@ -22,7 +22,7 @@ def create_calculator_initial_state(prompt: str) -> CalculatorState:
 calculator_task = EvaluationTask(
     task_name="Phi-4-mini-instruct-standard-calculator",
     model_name="microsoft/Phi-4-mini-instruct",
-    eval_csv_path="evaluation/data/calculator_evals.csv",
+    eval_csv_path="datasets/basic_calculations_eval.csv",
     environment_class=CalculatorEnvironment,
     create_initial_state=create_calculator_initial_state,
     verify_answer=is_correct_answer,
