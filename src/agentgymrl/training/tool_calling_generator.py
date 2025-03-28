@@ -78,11 +78,12 @@ class ToolCallingGenerator(Generic[STATE]):
         new_token_ids = outputs[0, len(all_token_ids):].tolist()
         self.token_handler.add_tokens(new_token_ids, should_train_on=True)
 
-        new_text = self.tokenizer.decode(new_token_ids, skip_special_tokens=False)
-        tool_calls = self.tool_call_parser.parse_tool_calls(response_text=new_text)
+        new_text_with_spec_tokens = self.tokenizer.decode(new_token_ids, skip_special_tokens=False)
+        new_text_without_spec_tokens = self.tokenizer.decode(new_token_ids, skip_special_tokens=True)
+        tool_calls = self.tool_call_parser.parse_tool_calls(response_text=new_text_with_spec_tokens)
 
         self.logger.debug(f"Generated {len(new_token_ids)} new tokens, with number of tool calls: {len(tool_calls)}")
-        return ModelOutput(raw_content=new_text, tool_calls=tool_calls)
+        return ModelOutput(raw_content=new_text_without_spec_tokens, tool_calls=tool_calls)
         
 
     def generate_with_tool_calls(
