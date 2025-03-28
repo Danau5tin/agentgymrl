@@ -1,3 +1,4 @@
+import os # <-- Import os module
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Type
 
@@ -25,7 +26,7 @@ class EvaluationTask:
     eval_csv_path: str
     model_name: str
     environment_class: Type[Environment]
-    create_initial_state: Callable[[str, Type[STATE]], List[dict[str, str]]] # Takes prompt and state_class, returns initial state
+    create_initial_state: Callable[[str], STATE]
     verify_answer: Callable[[str, str], bool] # Takes model_response and expected_answer, returns bool
     prompt_column: str = "prompt"
     answer_column: str = "answer"
@@ -45,11 +46,7 @@ class EvalRunner:
         Initializes the EvalRunner.
 
         Args:
-            model_path: Path to the Hugging Face model.
             tool_call_parser: An instance of a class implementing ToolCallParser.
-            max_iterations: Maximum interaction steps for the agentic system.
-            generation_temp: Temperature for model generation.
-            max_new_tokens: Max new tokens for model generation.
         """
         print("Initializing EvalRunner...")
         self.tool_call_parser = tool_call_parser
@@ -62,8 +59,13 @@ class EvalRunner:
     def _load_model(self, model_path: str) -> None:
         """Loads the model and tokenizer."""
         print(f"Loading model from {model_path}...")
-        model = AutoModelForCausalLM.from_pretrained(model_path)
-        tokenizer = AutoTokenizer.from_pretrained(model_path)
+        model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True)
+        tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+
+        if tokenizer.pad_token is None:
+            print("Warning: Tokenizer does not have a pad token. Setting to eos_token.")
+            tokenizer.pad_token = tokenizer.eos_token
+            model.config.pad_token_id = tokenizer.eos_token_id
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(f"Using device: {device}")
@@ -96,7 +98,8 @@ class EvalRunner:
                 inputs,
                 temperature=task.temperature,
                 do_sample=task.temperature > 0,
-                pad_token_id=self.tokenizer.eos_token_id,
+                pad_token_id=self.tokenizer.pad_token_id,
+                eos_token_id=self.tokenizer.eos_token_id,
                 max_new_tokens=task.max_new_tokens,
             )
 
@@ -131,16 +134,24 @@ class EvalRunner:
         )
 
         final_state = system.run()
-        
+
         # Extract final response - assumes last message is assistant's
         final_response = ""
         if final_state.messages and final_state.messages[-1].get("role") == "assistant":
-             final_response = final_state.messages[-1].get("content", "")
-             # Handle cases where content might be None or empty if only tool calls happened
-             if not final_response and final_state.messages[-1].get("tool_calls"):
+             content = final_state.messages[-1].get("content", "")
+             tool_calls_exist = bool(final_state.messages[-1].get("tool_calls"))
+
+             if content:
+                 final_response = content
+             elif tool_calls_exist:
                  final_response = "[Assistant used tools but provided no final text]"
-             elif not final_response:
-                 final_response = "[Assistant provided no final text]"
+             else:
+                 final_response = "[Assistant provided no final text or tool calls]"
+        elif final_state.messages:
+             # Handle cases where the last message isn't from the assistant (e.g., error, max iterations)
+             final_response = f"[Evaluation ended. Last message role: {final_state.messages[-1].get('role', 'Unknown')}]"
+        else:
+             final_response = "[No messages generated in final state]"
 
 
         is_correct = task.verify_answer(final_response, expected_answer)
@@ -154,10 +165,15 @@ class EvalRunner:
     def run_evaluation(
         self,
         task: EvaluationTask,
-        output_path: str = './results.csv',
+        output_dir: str = './evaluation_results',
     ) -> List[Dict[str, Any]]:
         """
         Evaluates all prompts in a CSV file based on the provided task.
+
+        Args:
+            task: The EvaluationTask configuration.
+            output_dir: The base directory where results will be saved.
+                        A subdirectory named after the task will be created here.
         """
         csv_path = task.eval_csv_path
         print(f"Starting evaluation for task: {task.task_name}")
@@ -176,8 +192,20 @@ class EvalRunner:
         if task.answer_column not in df.columns:
              raise ValueError(f"Answer column '{task.answer_column}' not found in CSV. Available columns: {df.columns.tolist()}")
 
+        task_output_dir = os.path.join(output_dir, task.task_name)
+        timestamp = pd.Timestamp.now().strftime("%Y%m%d_%H%M%S")
+        detailed_results_path = os.path.join(task_output_dir, f'detailed_results_{timestamp}.csv')
+        summary_results_path = os.path.join(task_output_dir, f'summary_results_{timestamp}.csv')
+
+        try:
+            os.makedirs(task_output_dir, exist_ok=True)
+            print(f"Results will be saved in: {task_output_dir}")
+        except OSError as e:
+            print(f"Error creating output directory {task_output_dir}: {e}")
+            return []
+
+
         print(f"Found {len(df)} problems to evaluate.")
-        print(f"Using tools: {[tool.__name__ for tool in task.tools] if task.tools else 'None'}")
 
         self._load_model(task.model_name)
 
@@ -185,10 +213,6 @@ class EvalRunner:
         for idx, row in tqdm(df.iterrows(), total=len(df), desc=f"Evaluating {task.task_name}"):
             prompt = row[task.prompt_column]
             expected_answer = str(row[task.answer_column])
-
-            print(f"\n--- Evaluating Problem {idx+1}/{len(df)} ---")
-            print(f"Prompt: {prompt}")
-            print(f"Expected Answer: {expected_answer}")
 
             try:
                 result = self._run_single_eval(
@@ -203,10 +227,9 @@ class EvalRunner:
                     "expected_answer": expected_answer,
                     "model_response": result["final_response"],
                     "is_correct": result["is_correct"],
-                    "conversation_history": result["final_state_messages"] # Store history
+                    "conversation_history": result["final_state_messages"]
                 }
                 results.append(result_entry)
-                print(f"Result: {'✓ Correct' if result['is_correct'] else '✗ Incorrect'}")
 
             except Exception as e:
                 print(f"Error evaluating problem {idx}: {e}")
@@ -231,21 +254,39 @@ class EvalRunner:
 
         correct_count = sum(1 for r in results if r.get("is_correct", False))
         total_evaluated = len(results)
-        accuracy = correct_count / total_evaluated if total_evaluated > 0 else 0
+        accuracy = (correct_count / total_evaluated * 100) if total_evaluated > 0 else 0
 
-        print("\n=== Evaluation Complete ===")
+        print("\n=== Evaluation Summary ===")
         print(f"Task: {task.task_name}")
         print(f"Total problems evaluated: {total_evaluated}")
         print(f"Correct answers: {correct_count}")
-        print(f"Accuracy: {accuracy:.2%}")
+        print(f"Accuracy: {accuracy:.2f}%")
 
         try:
             results_df = pd.DataFrame(results)
             if "conversation_history" in results_df.columns:
-                 results_df["conversation_history"] = results_df["conversation_history"].apply(lambda x: str(x) if x else None) # Simple string conversion
-            results_df.to_csv(output_path, index=False)
-            print(f"Results saved to {output_path}")
+                 results_df["conversation_history"] = results_df["conversation_history"].astype(str)
+            if "traceback" in results_df.columns:
+                 results_df["traceback"] = results_df["traceback"].astype(str)
+
+            results_df.to_csv(detailed_results_path, index=False, encoding='utf-8')
+            print(f"Detailed results saved to {detailed_results_path}")
         except Exception as e:
-            print(f"Error saving results to CSV: {e}")
+            print(f"Error saving detailed results to CSV: {e}")
+
+        summary_data = [{
+            "task_name": task.task_name,
+            "model_name": task.model_name,
+            "total_evaluated": total_evaluated,
+            "correct_count": correct_count,
+            "accuracy_percent": accuracy
+        }]
+        summary_df = pd.DataFrame(summary_data)
+        try:
+            summary_df.to_csv(summary_results_path, index=False, encoding='utf-8') # Added encoding
+            print(f"Summary results saved to {summary_results_path}")
+        except Exception as e:
+            print(f"Error saving summary results to CSV: {e}")
+
 
         return results
