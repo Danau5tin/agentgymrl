@@ -49,7 +49,7 @@ class CalculatorEnvironment(Environment):
         new_state = self.state.copy()
         
         tool_calls_dict = [tc.to_dict() for tc in model_output.tool_calls] if model_output.tool_calls else None
-        new_state.add_message("agent", model_output.raw_content, tool_calls_dict)
+        new_state.add_message("assistant", model_output.raw_content, tool_calls_dict)
         
         if len(model_output.tool_calls) == 0:
             self.state = new_state
