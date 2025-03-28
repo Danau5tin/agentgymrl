@@ -1,7 +1,8 @@
-from dataclasses import dataclass
-from typing import Callable, Generic, List, Optional
+from dataclasses import dataclass, field
+from typing import Any, Callable, Generic, List, Optional
 
 from agentgymrl.environments.state import STATE
+from agentgymrl.tool_calling.tool_func_schema_generator import generate_function_schema
 from agentgymrl.training.common_entities.results import ToolSampleResult
 from agentgymrl.training.environment_pool import EnvironmentConfig
 
@@ -9,10 +10,16 @@ from agentgymrl.training.environment_pool import EnvironmentConfig
 @dataclass
 class AgentConfig:
     sys_msg: str
-    tool_schemas: list[dict[str, any]]
+    tools: List[Callable[..., Any]]
     temperature: float = 0.9
     max_env_calls: int = 20
     max_new_tokens: int = 1000
+    tool_schemas: list[dict[str, any]] = field(init=False)
+
+    def __post_init__(self):
+        """Generate tool schemas after initialization."""
+        self.tool_schemas = [generate_function_schema(tool) for tool in self.tools] if self.tools else []
+
 
 @dataclass
 class ReportingConfig:
