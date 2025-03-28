@@ -66,7 +66,7 @@ class CalculatorEnvironment(Environment):
                 raise MultipleToolCallsError("Multiple tool calls not supported. Try one at a time.")
             
             tool_call = tool_calls[0]
-            if tool_call.tool_name != "calculator":
+            if tool_call.tool_name != "calculate":
                 raise UnsupportedToolCallError(f"Unsupported tool call: {tool_call.tool_name}")
             
             return self._execute_calculator_call(tool_call, state)
