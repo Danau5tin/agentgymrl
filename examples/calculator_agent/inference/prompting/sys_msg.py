@@ -1,17 +1,17 @@
 import os
 from typing import Literal
 
-from environment.tools.calculator import calculate
-
 current_file_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-def get_sys_msg(variant: Literal["no_tools", "phi_4_tools"]) -> str:
+def get_sys_msg(variant: Literal["no_tools", "phi_4_tools", "phi_4_minimal"]) -> str:
     variant_path = ""
     if variant == "no_tools":
         variant_path = "./sys_msg_no_tools.md"
     elif variant == "phi_4_tools":
         variant_path = "./sys_msg_phi_4_tools.md"
+    elif variant == "phi_4_minimal":
+        variant_path = "./sys_msg_phi_4_minimal.md"
 
     if not variant_path:
         raise ValueError(f"Unknown variant: {variant}")
