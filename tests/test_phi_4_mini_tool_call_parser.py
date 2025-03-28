@@ -115,6 +115,100 @@ class TestPhi4MiniInstructToolCallParser(unittest.TestCase):
         self.assertEqual(len(tool_calls), 2)
         self.assertEqual(tool_calls[0].tool_name, "search")
         self.assertEqual(tool_calls[1].tool_name, "get_time")
+        
+    def test_single_direct_format_tool_call(self):
+        """Test parsing a tool call with the direct format."""
+        response = "Let me calculate that for you. <|tool_call|>[{\"name\": \"calculate\", \"arguments\": {\"expression\": \"2 + 2\"}}]<|/tool_call|><|end|>"
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 1)
+        self.assertEqual(tool_calls[0].tool_name, "calculate")
+        self.assertEqual(tool_calls[0].tool_parameters, {"expression": "2 + 2"})
+    
+    def test_direct_format_with_nested_arguments(self):
+        """Test parsing a direct format tool call with nested arguments."""
+        response = "<|tool_call|>[{\"name\": \"calculate\", \"arguments\": {\"expression\": {\"operation\": \"multiply\", \"operands\": [27722, 273737]}}}]<|/tool_call|><|end|>"
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 1)
+        self.assertEqual(tool_calls[0].tool_name, "calculate")
+        self.assertEqual(tool_calls[0].tool_parameters, {
+            "expression": {
+                "operation": "multiply",
+                "operands": [27722, 273737]
+            }
+        })
+    
+    def test_multiple_direct_format_tool_calls(self):
+        """Test parsing multiple direct format tool calls."""
+        response = """
+        <|tool_call|>[{\"name\": \"get_weather\", \"arguments\": {\"location\": \"New York\"}}]<|/tool_call|>
+        <|tool_call|>[{\"name\": \"send_message\", \"arguments\": {\"recipient\": \"John\", \"content\": \"Hello!\"}}]<|/tool_call|>
+        <|end|>
+        """
+        
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 2)
+        self.assertEqual(tool_calls[0].tool_name, "get_weather")
+        self.assertEqual(tool_calls[0].tool_parameters, {"location": "New York"})
+        self.assertEqual(tool_calls[1].tool_name, "send_message")
+        self.assertEqual(tool_calls[1].tool_parameters, {"recipient": "John", "content": "Hello!"})
+    
+    def test_direct_format_array_in_single_block(self):
+        """Test parsing an array of direct format tool calls in a single block."""
+        response = """<|tool_call|>[
+            {\"name\": \"search\", \"arguments\": {\"query\": \"python\"}},
+            {\"name\": \"translate\", \"arguments\": {\"text\": \"hello\", \"to_language\": \"es\"}}
+        ]<|/tool_call|><|end|>"""
+        
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 2)
+        self.assertEqual(tool_calls[0].tool_name, "search")
+        self.assertEqual(tool_calls[0].tool_parameters, {"query": "python"})
+        self.assertEqual(tool_calls[1].tool_name, "translate")
+        self.assertEqual(tool_calls[1].tool_parameters, {"text": "hello", "to_language": "es"})
+    
+    def test_direct_format_with_string_arguments(self):
+        """Test parsing a direct format tool call with string arguments."""
+        response = """<|tool_call|>[{\"name\": \"search\", \"arguments\": \"{\\\"query\\\": \\\"python\\\"}\"}]<|/tool_call|><|end|>"""
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 1)
+        self.assertEqual(tool_calls[0].tool_name, "search")
+        self.assertEqual(tool_calls[0].tool_parameters, {"query": "python"})
+    
+    def test_mixed_format_tool_calls(self):
+        """Test parsing a response with both format types of tool calls."""
+        response = """
+        <|tool_call|>[{\"type\": \"function\", \"function\": {\"name\": \"search\", \"arguments\": {\"query\": \"python\"}}}]<|/tool_call|>
+        <|tool_call|>[{\"name\": \"calculate\", \"arguments\": {\"expression\": \"10 * 5\"}}]<|/tool_call|>
+        <|end|>
+        """
+        
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 2)
+        self.assertEqual(tool_calls[0].tool_name, "search")
+        self.assertEqual(tool_calls[0].tool_parameters, {"query": "python"})
+        self.assertEqual(tool_calls[1].tool_name, "calculate")
+        self.assertEqual(tool_calls[1].tool_parameters, {"expression": "10 * 5"})
+    
+    def test_mixed_format_array_in_single_block(self):
+        """Test parsing an array with mixed format tool calls in a single block."""
+        response = """<|tool_call|>[
+            {\"type\": \"function\", \"function\": {\"name\": \"search\", \"arguments\": {\"query\": \"python\"}}},
+            {\"name\": \"calculate\", \"arguments\": {\"expression\": \"10 * 5\"}}
+        ]<|/tool_call|><|end|>"""
+        
+        tool_calls = self.parser.parse_tool_calls(response)
+        
+        self.assertEqual(len(tool_calls), 2)
+        self.assertEqual(tool_calls[0].tool_name, "search")
+        self.assertEqual(tool_calls[0].tool_parameters, {"query": "python"})
+        self.assertEqual(tool_calls[1].tool_name, "calculate")
+        self.assertEqual(tool_calls[1].tool_parameters, {"expression": "10 * 5"})
 
 
 if __name__ == "__main__":
