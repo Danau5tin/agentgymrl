@@ -133,7 +133,7 @@ class EvalRunner:
             max_iterations=task.max_env_calls,
         )
 
-        final_state = system.run()
+        final_state = system.run(state=initial_state)
 
         # Extract final response - assumes last message is assistant's
         final_response = ""
