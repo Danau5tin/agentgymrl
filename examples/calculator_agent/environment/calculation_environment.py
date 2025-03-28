@@ -102,6 +102,10 @@ class CalculatorEnvironment(Environment):
                 output_to_show_model=tool_call_output,
                 exception=e,
             )
+        
+    def get_state(self) -> CalculatorState:
+        """Get the current state of the calculator environment."""
+        return self
     
     def cleanup(self):
         """Clean up any resources. No cleanup needed for this environment."""
