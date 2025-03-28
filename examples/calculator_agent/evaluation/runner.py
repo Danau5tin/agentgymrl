@@ -1,4 +1,4 @@
-import os # <-- Import os module
+import os
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List, Type
 
@@ -86,7 +86,7 @@ class EvalRunner:
         """
         if not hasattr(state, 'messages') or not isinstance(state.messages, list):
              raise AttributeError(f"State object of type {type(state)} must have a 'messages' attribute (list).")
-
+        
         inputs = self.tokenizer.apply_chat_template(
             state.messages,
             add_generation_prompt=True,
@@ -97,9 +97,7 @@ class EvalRunner:
             outputs = self.model.generate(
                 inputs,
                 temperature=task.temperature,
-                do_sample=task.temperature > 0,
-                pad_token_id=self.tokenizer.pad_token_id,
-                eos_token_id=self.tokenizer.eos_token_id,
+                do_sample=True,
                 max_new_tokens=task.max_new_tokens,
             )
 
