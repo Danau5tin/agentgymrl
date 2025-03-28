@@ -5,7 +5,7 @@ from evaluation.runner import EvalRunner, EvaluationTask
 from evaluation.calc_evals import calculator_task, calculator_tool_parser
 
 
-OUTPUT_DIRECTORY = "./evaluation_output"
+OUTPUT_DIRECTORY = "./evaluation/results"
 
 if __name__ == "__main__":
     load_dotenv()
