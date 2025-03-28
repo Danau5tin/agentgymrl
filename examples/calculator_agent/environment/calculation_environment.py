@@ -83,7 +83,7 @@ class CalculatorEnvironment(Environment):
     def _execute_calculator_call(self, tool_call: ToolCall, state: CalculatorState) -> EnvironmentResult:
         """Execute a calculator tool call with the given parameters."""
         try:
-            expression = Expression(**tool_call.tool_params)
+            expression = Expression(**tool_call.tool_parameters)
             result = calculate(expression)
             
             tool_call_output = str(result)
