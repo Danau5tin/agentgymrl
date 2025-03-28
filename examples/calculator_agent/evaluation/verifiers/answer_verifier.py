@@ -7,24 +7,37 @@ def _clean_number_string(number_str: str) -> float:
 
 def is_correct_answer(agent_answer: str, correct_answer: str) -> bool:
     """
-    Check if the agent's answer is correct by extracting numerical values.
+    Check if the agent's answer is correct by extracting the last numerical value.
     
     Args:
-        agent_answer: The agent's answer (string that should end with "Answer: {value}")
+        agent_answer: The agent's answer (string containing at least one numerical value)
         correct_answer: The correct answer (string that can be converted to float)
         
     Returns:
-        True if the extracted agent's answer matches the correct answer, False otherwise
+        True if the last numerical value in the agent's answer matches the correct answer, False otherwise
     """
-    # Extract numerical value from agent_answer using regex
-    pattern = r"Answer:\s*(-?[\d,]*\.?\d+)"
-    match = re.search(pattern, agent_answer)
+    # Pattern to match different number formats:
+    # - Integers with optional commas: -?[\d,]+
+    # - Numbers with decimal points: -?[\d,]+\.?\d*
+    # - Numbers starting with decimal: -?\.\d+
+    # - Scientific notation: (?:[eE][-+]?\d+)?
+    pattern = r"(-?[\d,]+\.?\d*(?:[eE][-+]?\d+)?|-?\.\d+(?:[eE][-+]?\d+)?)"
+    matches = re.findall(pattern, agent_answer)
     
-    if not match:
-        return False 
+    # Filter out invalid matches by attempting conversion to float
+    valid_numbers = []
+    for match in matches:
+        try:
+            valid_numbers.append(_clean_number_string(match))
+        except (ValueError, TypeError):
+            continue
+    
+    if not valid_numbers:
+        return False
     
     try:
-        agent_numerical = _clean_number_string(match.group(1))
+        # Get the last valid numerical value
+        agent_numerical = valid_numbers[-1]
         correct_numerical = _clean_number_string(str(correct_answer))
         
         # Compare with small tolerance for floating point precision issues
