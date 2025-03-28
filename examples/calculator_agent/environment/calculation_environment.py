@@ -51,9 +51,9 @@ class CalculatorEnvironment(Environment):
         tool_calls_dict = [tc.to_dict() for tc in model_output.tool_calls] if model_output.tool_calls else None
         new_state.add_message("agent", model_output.raw_content, tool_calls_dict)
         
-        if not model_output.tool_calls:
+        if len(model_output.tool_calls) == 0:
             self.state = new_state
-            return EnvironmentResult(should_end_sequence=False)
+            return EnvironmentResult(should_end_sequence=True)
         
         result = self._handle_tool_calls(model_output.tool_calls, new_state)
         self.state = new_state
@@ -83,7 +83,7 @@ class CalculatorEnvironment(Environment):
     def _execute_calculator_call(self, tool_call: ToolCall, state: CalculatorState) -> EnvironmentResult:
         """Execute a calculator tool call with the given parameters."""
         try:
-            expression = Expression(**tool_call.tool_parameters)
+            expression = Expression(**tool_call.tool_parameters["expression"])
             result = calculate(expression)
             
             tool_call_output = str(result)
