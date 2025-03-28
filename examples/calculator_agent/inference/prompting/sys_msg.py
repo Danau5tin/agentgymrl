@@ -1,8 +1,5 @@
-import json
 import os
 from typing import Literal
-
-from agentgymrl.tool_calling.tool_func_schema_generator import generate_function_schema
 
 from environment.tools.calculator import calculate
 
@@ -24,8 +21,3 @@ def get_sys_msg(variant: Literal["no_tools", "phi_4_tools"]) -> str:
     with open(sys_msg_path, "r", encoding="utf-8") as f:
         return f.read()
     
-
-
-schema = generate_function_schema(calculate)
-with open("schema.json", "w", encoding="utf-8") as f:
-    json.dump(schema, f, indent=2)
