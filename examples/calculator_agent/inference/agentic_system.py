@@ -52,7 +52,7 @@ class AgenticSystem(Generic[STATE]):
 
         new_state = self.environment.get_state()
         
-        if result.should_end or result.has_error or self.current_iteration >= self.max_iterations:
+        if result.should_end_sequence or result.has_error or self.current_iteration >= self.max_iterations:
             self.environment.cleanup()
             return new_state
             

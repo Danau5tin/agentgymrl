@@ -105,7 +105,7 @@ class CalculatorEnvironment(Environment):
         
     def get_state(self) -> CalculatorState:
         """Get the current state of the calculator environment."""
-        return self
+        return self.state
     
     def cleanup(self):
         """Clean up any resources. No cleanup needed for this environment."""
