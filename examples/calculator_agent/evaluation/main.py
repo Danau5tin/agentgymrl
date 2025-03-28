@@ -1,11 +1,16 @@
+import os # Import os
 from dotenv import load_dotenv
 
 from evaluation.runner import EvalRunner, EvaluationTask
 from evaluation.calc_evals import calculator_task, calculator_tool_parser
 
 
+OUTPUT_DIRECTORY = "./evaluation_output"
+
 if __name__ == "__main__":
     load_dotenv()
+
+    os.makedirs(OUTPUT_DIRECTORY, exist_ok=True)
 
     current_task: EvaluationTask = calculator_task
     current_parser = calculator_tool_parser
@@ -13,9 +18,10 @@ if __name__ == "__main__":
     runner = EvalRunner(tool_call_parser=current_parser)
 
     try:
+        print(f"Running evaluation for task: {current_task.task_name}")
         results = runner.run_evaluation(
             task=current_task,
-            output_path="./results.csv",
+            output_dir=OUTPUT_DIRECTORY,
         )
         print("\nEvaluation script finished successfully.")
 
