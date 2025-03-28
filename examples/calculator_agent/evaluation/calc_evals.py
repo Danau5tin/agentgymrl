@@ -12,7 +12,7 @@ def create_calculator_initial_state(prompt: str) -> CalculatorState:
     """Creates the initial state for the calculator task."""
     state = CalculatorState(
         messages=[
-            {"role": "system", "content": get_sys_msg("phi_4_tools")},
+            {"role": "system", "content": get_sys_msg("phi_4_minimal")},
             {"role": "user", "content": prompt},
         ]
     )
@@ -26,6 +26,7 @@ calculator_task = EvaluationTask(
     environment_class=CalculatorEnvironment,
     create_initial_state=create_calculator_initial_state,
     verify_answer=is_correct_answer,
+    temperature=0.2
 )
 
 
