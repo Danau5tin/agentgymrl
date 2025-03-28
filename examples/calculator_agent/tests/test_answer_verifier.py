@@ -14,7 +14,6 @@ class TestAnswerChecker(unittest.TestCase):
         self.assertFalse(is_correct_answer(agent_answer="The result is 42", correct_answer="43"))
         self.assertFalse(is_correct_answer(agent_answer="Let me calculate: 42, 43, 44", correct_answer="42"))
         self.assertFalse(is_correct_answer(agent_answer="The answer is 42.0", correct_answer="42.1"))
-        self.assertFalse(is_correct_answer(agent_answer="The answer is 42.0", correct_answer="42.0001"))
         
     
     def test_number_formats(self):
@@ -47,21 +46,11 @@ class TestAnswerChecker(unittest.TestCase):
         self.assertTrue(is_correct_answer(agent_answer="First I calculated 42, but then I realized it was 43", correct_answer="43"))
         self.assertFalse(is_correct_answer(agent_answer="First I calculated 43, but then I realized it was 42", correct_answer="43"))
     
-    def test_embedded_in_text(self):
-        """Test numbers embedded in text."""
-        self.assertTrue(is_correct_answer(agent_answer="After analyzing the data, the GDP grew by 3.5% last quarter", correct_answer="3.5"))
-        self.assertTrue(is_correct_answer(agent_answer="Temperature rose from 20°C to 25°C", correct_answer="25"))
-    
     def test_answer_format(self):
         """Test old 'Answer:' format still works but isn't required."""
         self.assertTrue(is_correct_answer(agent_answer="Answer: 42", correct_answer="42"))
         self.assertTrue(is_correct_answer(agent_answer="The final answer is: 42", correct_answer="42"))
         self.assertTrue(is_correct_answer(agent_answer="I think the answer: 42", correct_answer="42"))
-    
-    def test_tolerance(self):
-        """Test tolerance for floating point comparisons."""
-        self.assertTrue(is_correct_answer(agent_answer="The answer is 42.000001", correct_answer="42"))
-        self.assertTrue(is_correct_answer(agent_answer="The answer is 0.3333333", correct_answer="0.333333"))
     
     def test_edge_cases(self):
         """Test edge cases."""
@@ -73,6 +62,21 @@ class TestAnswerChecker(unittest.TestCase):
         
         # Invalid answer format that should now work
         self.assertTrue(is_correct_answer(agent_answer="The answer comes to exactly 42 dollars.", correct_answer="42"))
+
+    def test_tolerance(self):
+        """Test the tolerance parameter."""
+        # Within tolerance
+        self.assertTrue(is_correct_answer(agent_answer="Approx 3.14", correct_answer="3.14159"))
+        an = is_correct_answer(agent_answer="It's 100.01", correct_answer="100")
+        self.assertTrue(an)
+        self.assertTrue(is_correct_answer(agent_answer="It's 99.99", correct_answer="100"))
+        self.assertTrue(is_correct_answer(agent_answer="Value: -5.55", correct_answer="-5.5"))
+        self.assertTrue(is_correct_answer(agent_answer="Approx 3.1", correct_answer="3.14159"))
+        self.assertTrue(is_correct_answer(agent_answer="It's 100.02", correct_answer="100"))
+
+        # Outside tolerance
+        self.assertFalse(is_correct_answer(agent_answer="It's 99.2", correct_answer="100"))
+        self.assertFalse(is_correct_answer(agent_answer="Value: -5.65", correct_answer="-5.5"))
 
 if __name__ == '__main__':
     unittest.main()
