@@ -1,0 +1,2 @@
+task_name,model_name,total_evaluated,correct_count,accuracy_percent
+Phi-4-mini-instruct-standard-calculator,microsoft/Phi-4-mini-instruct,158,32,20.253164556962027
