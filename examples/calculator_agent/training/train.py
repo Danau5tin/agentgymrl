@@ -30,6 +30,9 @@ if __name__ == "__main__":
     hf_username = os.getenv("HF_USERNAME")
     use_peft = os.getenv("USE_PEFT", "false").lower() == "true"
     num_envs = os.getenv("NUM_ENVS", "8")
+    max_env_calls = os.getenv("MAX_ENV_CALLS_PER_SAMPLE")
+    temperature = os.getenv("TEMPERATURE_FOR_GENERATION")
+    max_new_tokens = os.getenv("MAX_NEW_TOKENS_PER_GENERATION")
 
 
     env_config = EnvironmentConfig(
@@ -39,9 +42,9 @@ if __name__ == "__main__":
     agent_config = AgentConfig(
         sys_msg=get_sys_msg("phi_4_minimal"),
         tools=[], # Already injected in the system message
-        temperature=0.9,
-        max_env_calls=20,
-        max_new_tokens=500,
+        temperature=float(temperature),
+        max_env_calls=int(max_env_calls),
+        max_new_tokens=int(max_new_tokens),
     )
     reporting_config = ReportingConfig.create_wandb(report_every_n_steps=10)
 
