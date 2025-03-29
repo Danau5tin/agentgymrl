@@ -179,6 +179,26 @@ class EnvironmentPool(Generic[STATE]):
 
         return self.environments[env_idx].handle_output(model_output)
     
+    def initialise_state_with_user_prompt(
+        self, env_idx: int, user_prompt: str
+    ) -> None:
+        """
+        Initialise the state of a specific environment with a user prompt.
+
+        Args:
+            env_idx: Index of the environment to use
+            user_prompt: User prompt to initialise the environment state
+
+        Raises:
+            IndexError: If env_idx is out of range
+        """
+        if env_idx < 0 or env_idx >= len(self.environments):
+            raise IndexError(
+                f"Environment index {env_idx} out of range (0-{len(self.environments) - 1})"
+            )
+
+        self.environments[env_idx].initialise_state_with_user_prompt(user_prompt)
+
     def get_state(self, env_idx: int) -> Optional[STATE]:
         """
         Get the state of a specific environment.

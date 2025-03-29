@@ -43,6 +43,12 @@ class CalculatorEnvironment(Environment):
         """Initialize the calculator environment with an empty state."""
         super().__init__(env_idx=env_idx)
         self.state = initial_state or CalculatorState()
+
+    def initialise_state_with_user_prompt(self, user_prompt: str) -> None:
+        """Initialise the calculator environment with a user prompt."""
+        new_state = CalculatorState()
+        new_state.add_message("user", user_prompt)
+        self.state = new_state
     
     def handle_output(self, model_output: ModelOutput) -> EnvironmentResult:
         """Process model output and update environment state accordingly."""
