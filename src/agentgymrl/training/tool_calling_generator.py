@@ -1,17 +1,18 @@
 import logging
 from typing import Generic
 
-from agentgymrl.environments.state import STATE
 import torch
 from transformers import PreTrainedModel, PreTrainedTokenizer
 
+from agentgymrl.environments.state import STATE
 from agentgymrl.inference.model_output import ModelOutput
-from agentgymrl.training.environment_pool import EnvironmentPool
 from agentgymrl.training.common_entities.config import AgentConfig
 from agentgymrl.training.common_entities.results import SampleResult
+from agentgymrl.training.environment_pool import EnvironmentPool
 from agentgymrl.training.token_handlers.phi_4_mini_instruct import (
     Phi4MiniInstructTokenHandler,
 )
+from agentgymrl.training.token_handlers.token_handler import TokenHandler
 from agentgymrl.training.tool_call_parsers.phi_4_mini_instruct import (
     Phi4MiniInstructToolCallParser,
 )
@@ -46,28 +47,35 @@ class ToolCallingGenerator(Generic[STATE]):
         self.environment_pool = environment_pool
         self.agent_config = agent_config
 
-        self.token_handler = Phi4MiniInstructTokenHandler(tokenizer=tokenizer)  # TODO (AIT-733): Create a factory and handle different models
         self.tool_call_parser = Phi4MiniInstructToolCallParser()  # TODO (AIT-733): Create a factory and handle different models
 
-    def _initialise_conversation(self, env_idx: int, prompt: str) -> None:
+    def _initialise_conversation(
+            self, 
+            token_handler: TokenHandler,
+            env_idx: int, 
+            prompt: str,
+        ) -> None:
         self.environment_pool.initialise_state_with_user_prompt(
             env_idx=env_idx, 
             user_prompt=prompt
         )
 
-        self.token_handler.start_sequence(
+        token_handler.start_sequence(
             sys_msg=self.agent_config.sys_msg, 
             tools=self.agent_config.tool_schemas
         )
-        self.token_handler.add_user_message(prompt)
-        self.token_handler.add_assistant_generation_prompt()
+        token_handler.add_user_message(prompt)
+        token_handler.add_assistant_generation_prompt()
         self.logger.debug("Initialized conversation and added assistant generation prompt")
 
-    def _run_inference_on_model(self) -> ModelOutput:
+    def _run_inference_on_model(
+            self,
+            token_handler: TokenHandler,
+        ) -> ModelOutput:
         """
         Generate the next tokens from the model.
         """
-        all_token_ids = self.token_handler.get_all_tokens()
+        all_token_ids = token_handler.get_all_tokens()
         inputs = {'input_ids': torch.tensor([all_token_ids], device=self.device)}
         self.logger.debug(f"Generating next tokens from model with input length: {len(all_token_ids)}")
         
@@ -80,7 +88,7 @@ class ToolCallingGenerator(Generic[STATE]):
             )
 
         new_token_ids = outputs[0, len(all_token_ids):].tolist()
-        self.token_handler.add_tokens(new_token_ids, should_train_on=True)
+        token_handler.add_tokens(new_token_ids, should_train_on=True)
 
         new_text_with_spec_tokens = self.tokenizer.decode(new_token_ids, skip_special_tokens=False)
         new_text_without_spec_tokens = self.tokenizer.decode(new_token_ids, skip_special_tokens=True)
@@ -96,12 +104,14 @@ class ToolCallingGenerator(Generic[STATE]):
             env_idx: int = 0,
     ) -> SampleResult[STATE]:
         
-        self._initialise_conversation(env_idx=env_idx, prompt=prompt)
+        token_handler = Phi4MiniInstructTokenHandler(tokenizer=self.tokenizer)  # TODO (AIT-733): Create a factory and handle different models
+
+        self._initialise_conversation(token_handler=token_handler, env_idx=env_idx, prompt=prompt)
         env_call_count = 0
         env_exceptions = []
 
         while env_call_count < self.agent_config.max_env_calls:
-            model_output = self._run_inference_on_model()
+            model_output = self._run_inference_on_model(token_handler=token_handler)
             env_result = self.environment_pool.handle_output(
                 env_idx=env_idx,
                 model_output=model_output,
@@ -115,17 +125,17 @@ class ToolCallingGenerator(Generic[STATE]):
                 self.logger.debug("Environment decided to end the sequence")
                 break
 
-            self.token_handler.add_tool_output_message(content=env_result.output_to_show_model)
-            self.token_handler.add_assistant_generation_prompt()
+            token_handler.add_tool_output_message(content=env_result.output_to_show_model)
+            token_handler.add_assistant_generation_prompt()
 
         # Sanity call to cover scenarios such as env ending sequence before the model does
-        self.token_handler.add_end_of_sequence_if_not_present()
+        token_handler.add_end_of_sequence_if_not_present()
 
         env_state = self.environment_pool.get_state(env_idx=env_idx)
         return SampleResult[STATE](
             env_state=env_state,
-            input_ids=torch.tensor(self.token_handler.get_all_tokens(), device=self.device),
-            source_mask=torch.tensor(self.token_handler.get_source_mask(), device=self.device),
+            input_ids=torch.tensor(token_handler.get_all_tokens(), device=self.device),
+            source_mask=torch.tensor(token_handler.get_source_mask(), device=self.device),
             env_call_count=env_call_count,
             env_exceptions=env_exceptions,
         )
