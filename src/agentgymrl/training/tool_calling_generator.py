@@ -49,7 +49,12 @@ class ToolCallingGenerator(Generic[STATE]):
         self.token_handler = Phi4MiniInstructTokenHandler(tokenizer=tokenizer)  # TODO (AIT-733): Create a factory and handle different models
         self.tool_call_parser = Phi4MiniInstructToolCallParser()  # TODO (AIT-733): Create a factory and handle different models
 
-    def _initialize_conversation(self, prompt: str) -> None:
+    def _initialise_conversation(self, env_idx: int, prompt: str) -> None:
+        self.environment_pool.initialise_state_with_user_prompt(
+            env_idx=env_idx, 
+            user_prompt=prompt
+        )
+
         self.token_handler.start_sequence(
             sys_msg=self.agent_config.sys_msg, 
             tools=self.agent_config.tool_schemas
@@ -71,7 +76,6 @@ class ToolCallingGenerator(Generic[STATE]):
                 **inputs,
                 temperature=self.agent_config.temperature,
                 do_sample=True,
-                pad_token_id=self.tokenizer.eos_token_id, # TODO: Needed?
                 max_new_tokens=self.agent_config.max_new_tokens,
             )
 
@@ -92,7 +96,7 @@ class ToolCallingGenerator(Generic[STATE]):
             env_idx: int = 0,
     ) -> SampleResult[STATE]:
         
-        self._initialize_conversation(prompt)
+        self._initialise_conversation(env_idx=env_idx, prompt=prompt)
         env_call_count = 0
         env_exceptions = []
 
