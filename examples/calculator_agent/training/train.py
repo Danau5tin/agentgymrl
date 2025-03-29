@@ -1,5 +1,7 @@
 import datetime
+import logging
 import os
+import sys
 
 from accelerate import Accelerator
 from dotenv import load_dotenv
@@ -15,17 +17,24 @@ from inference.prompting.sys_msg import get_sys_msg
 from training.rewards.calculator_reward_func import calculate_reward
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        handlers=[logging.StreamHandler(sys.stdout)]
+    )
+    
     load_dotenv()
     model_name = os.getenv("MODEL_NAME")
     training_data_path = os.getenv("TRAINING_DATA_PATH")
     hf_token = os.getenv("HF_TOKEN")
     hf_username = os.getenv("HF_USERNAME")
     use_peft = os.getenv("USE_PEFT", "false").lower() == "true"
+    num_envs = os.getenv("NUM_ENVS", "8")
 
 
     env_config = EnvironmentConfig(
         env_class=CalculatorEnvironment,
-        num_envs=16,
+        num_envs=int(num_envs),
     )
     agent_config = AgentConfig(
         sys_msg=get_sys_msg("phi_4_minimal"),
