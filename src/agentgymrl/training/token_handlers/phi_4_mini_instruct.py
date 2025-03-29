@@ -53,8 +53,8 @@ class Phi4MiniInstructTokenHandler(TokenHandler):
         self.add_tokens([self.assistant_token_id], should_train_on=should_train_on)
 
     def add_tool_output_message(self, content: str, should_train_on = False):
-        content_tokens = self.tokenizer.tokenize(content, add_special_tokens=False)
-        new_tokens = [self.tool_token_id, *content_tokens, self.eot_token_id]
+        content_ids = self.tokenizer.encode(content)
+        new_tokens = [self.tool_token_id, *content_ids, self.eot_token_id]
         self.add_tokens(new_tokens, should_train_on=should_train_on)
 
     def add_end_of_sequence_if_not_present(self):
