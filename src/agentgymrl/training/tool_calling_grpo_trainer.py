@@ -335,6 +335,15 @@ class ToolCallingGRPOTrainer(GRPOTrainer, Generic[STATE]):
         input_ids = torch.stack(padded_input_ids).to(device)
         attention_mask = torch.stack(padded_attention_masks).to(device)
         source_mask = torch.stack(padded_source_masks).to(device)
+
+        local_max_seq_len = input_ids.shape[1]
+        seq_len_tensor = torch.tensor([local_max_seq_len], device=device, dtype=torch.long)
+        all_seq_lens = self.accelerator.gather(seq_len_tensor)
+        global_max_seq_len = all_seq_lens.max().item()
+
+        if self.accelerator.is_main_process:
+            self.logger.info(f"Batch sequence lengths (local max): {local_max_seq_len}")
+            self.logger.info(f"Batch sequence lengths (global max across GPUs): {global_max_seq_len}")
         
         eos_mask = self._create_eos_mask(input_ids, self.tokenizer.eos_token_id)
 
