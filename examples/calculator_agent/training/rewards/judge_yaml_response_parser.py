@@ -1,10 +1,10 @@
-
 import re
 from typing import Optional
 
 import yaml
 
-from training.rewards.exec_judge import JudgeResponse
+from training.rewards.judge_resp import JudgeResponse
+
 
 
 class YAMLResponseParser:

@@ -1,16 +1,8 @@
-from dataclasses import dataclass
 from typing import Optional
 
 from inference.model_exec.model_executor import Message, ModelExecutor
+from training.rewards.judge_resp import JudgeResponse
 from training.rewards.judge_yaml_response_parser import YAMLResponseParser
-
-
-
-@dataclass
-class JudgeResponse:
-    thoughts: str
-    score: float
-
 
 
 class JudgeExecutor:
