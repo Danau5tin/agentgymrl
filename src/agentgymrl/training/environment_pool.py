@@ -77,22 +77,11 @@ class EnvironmentPool(Generic[STATE]):
         """
         self.logger = logging.getLogger(__name__)
         self.env_class = config.env_class
-        self.num_environments = config.num_environments
+        self.num_environments = config.num_envs
         self.environments: List[T] = []
 
-
-        if (
-            config.env_class_individual_kwargs is None
-            or len(config.env_class_individual_kwargs) == 0
-        ):
-            env_class_individual_kwargs = [{} for _ in range(config.num_environments)]
-        elif len(env_class_individual_kwargs) != config.num_environments:
-            raise ValueError(
-                f"Expected {config.num_environments} individual kwargs dictionaries, got {len(env_class_individual_kwargs)}"
-            )
-
         self._create_environments_parallel(
-            config.env_class_shared_kwargs or {}, env_class_individual_kwargs
+            config.env_class_shared_kwargs or {}, config.env_class_individual_kwargs
         )
 
     def _create_environment(self, idx: int, env_args: dict) -> T:
