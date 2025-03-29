@@ -60,14 +60,16 @@ if __name__ == "__main__":
     peft_config = None
     if use_peft:
         from peft import LoraConfig
-        peft_config = LoraConfig(
-            r=16,
-            lora_alpha=16,
-            target_modules=["gate_proj", "up_proj", "down_proj"],
-            lora_dropout=0,
-            bias="none",
-            task_type="CAUSAL_LM"
-        )
+        peft_config = {
+            "r": 16,
+            "lora_alpha": 32,
+            "lora_dropout": 0.05,
+            "bias": "none",
+            "task_type": "CAUSAL_LM",
+            "target_modules": "all-linear",
+            "modules_to_save": None,
+        }
+        peft_conf = LoraConfig(**peft_config)
 
     training_config = TrainingConfig(
         hf_model_name=model_name,
@@ -84,7 +86,35 @@ if __name__ == "__main__":
         peft_config=peft_config,
     )
 
-    model_description = f"""
+    trainer.train()
+    if use_peft:
+        model_description = f"""
+# {run_name}
+
+This is a PEFT adapter trained with GRPO for calculator tool use.
+
+## Training Details
+- Base model: {model_name}
+- Environment: {env_config.env_class.__name__}
+- Number of environments: {env_config.num_envs}
+- Training timestamp: {timestamp}
+
+## Usage
+```python
+from peft import PeftModel, PeftConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+# Load the base model and tokenizer
+model = AutoModelForCausalLM.from_pretrained("{model_name}")
+tokenizer = AutoTokenizer.from_pretrained("{model_name}")
+
+# Load and apply the adapter
+peft_config = PeftConfig.from_pretrained("{repo_name}")
+model = PeftModel.from_pretrained(model, "{repo_name}")
+```
+""".strip()
+    else:
+        model_description = f"""
 # {run_name}
 
 This is a full model trained with GRPO for calculator tool use.
@@ -103,7 +133,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 model = AutoModelForCausalLM.from_pretrained("{repo_name}")
 tokenizer = AutoTokenizer.from_pretrained("{model_name}")  # Tokenizer can be loaded from original or fine-tuned model
 ```
-""".strip()
+    """.strip()
     
     # Push model to HF Hub
     if is_main_process:
