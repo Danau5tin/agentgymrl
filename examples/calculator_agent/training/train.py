@@ -76,9 +76,9 @@ if __name__ == "__main__":
         train_csv_dataset_path=training_data_path,
         output_dir=output_dir,
         agent_config=agent_config,
-        reporting_config=reporting_config,
         environment_config=env_config,
         reward_func=calculate_reward,
+        reporting_config=reporting_config,
     )
 
     trainer = ToolCallingGRPOTrainer(

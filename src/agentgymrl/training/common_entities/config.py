@@ -48,7 +48,7 @@ class TrainingConfig(Generic[STATE]):
     train_csv_dataset_path: str
     output_dir: str
     agent_config: AgentConfig
-    reporting_config: ReportingConfig
     environment_config: EnvironmentConfig
     reward_func: Callable[[List[ToolSampleResult[STATE]]], List[float]]
     reporting_config: Optional[ReportingConfig] = None
+    
