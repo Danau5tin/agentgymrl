@@ -2,6 +2,7 @@ import datetime
 import os
 
 from accelerate import Accelerator
+from dotenv import load_dotenv
 from huggingface_hub import HfApi
 import wandb
 
@@ -14,6 +15,7 @@ from inference.prompting.sys_msg import get_sys_msg
 from training.rewards.calculator_reward_func import calculate_reward
 
 if __name__ == "__main__":
+    load_dotenv()
     model_name = os.getenv("MODEL_NAME")
     training_data_path = os.getenv("TRAINING_DATA_PATH")
     hf_token = os.getenv("HF_TOKEN")
