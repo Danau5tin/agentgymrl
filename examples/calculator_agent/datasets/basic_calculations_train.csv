@@ -1,317 +1,317 @@
-prompt,expression,answer
-"What is 4829 multiplied by 736?", "4829*736",4829*736
-"Calculate 67392 divided by 85", "67392/85",67392/85
-"What's the result of 19583 plus 42967?", "19583+42967",19583+42967
-"Compute 86729 minus 35214", "86729-35214",86729-35214
-"What is the product of 943 and 678?", "943*678",943*678
-"Calculate the sum of 69384 and 128", "69384+128",69384+128
-"What's 23786 divided by 452?", "23786/452",23786/452
-"Find the product of 84632 and 375", "84632*375",84632*375
-"Calculate 1254 plus 863", "1254+863",1254+863
-"What is 79281 minus 93?", "79281-93",79281-93
-"What's the result when you multiply 35721 by 629?", "35721*629",35721*629
-"Calculate 87301 divided by 462", "87301/462",87301/462
-"How much is 738 plus 1425?", "738+1425",738+1425
-"What is 64872 minus 144?", "64872-144",64872-144
-"Find the product of 879 and 652", "879*652",879*652
-"Calculate 58743 divided by 231", "58743/231",58743/231
-"What's the sum of 27549 and 63852?", "27549+63852",27549+63852
-"What is 95428 minus 28973?", "95428-28973",95428-28973
-"Compute 136475 times 589", "136475*589",136475*589
-"Calculate 47863 divided by 921", "47863/921",47863/921
-"What's the result of 524 plus 937?", "524+937",524+937
-"What is 72541 minus 167?", "72541-167",72541-167
-"Find the product of 38426 and 652", "38426*652",38426*652
-"Calculate 65831 divided by 427", "65831/427",65831/427
-"How much is 2453 plus 1892?", "2453+1892",2453+1892
-"What is 74529 minus 183?", "74529-183",74529-183
-"What's the result when you multiply 45872 by 384?", "45872*384",45872*384
-"Calculate 51240 divided by 152", "51240/152",51240/152
-"What is 1436 plus 275?", "1436+275",1436+275
-"What is 83694 minus 342?", "83694-342",83694-342
-"Find the product of 875 and 642", "875*642",875*642
-"Calculate 74632 divided by 268", "74632/268",74632/268
-"What's the sum of 96241 and 357?", "96241+357",96241+357
-"What is 734 minus 258?", "734-258",734-258
-"Compute 52938 times 786", "52938*786",52938*786
-"Calculate 67859 divided by 823", "67859/823",67859/823
-"What's the result of 853 plus 426?", "853+426",853+426
-"What is 1274 minus 386?", "1274-386",1274-386
-"Find the product of 64527 and 381", "64527*381",64527*381
-"Calculate 92516 divided by 287", "92516/287",92516/287
-"How much is 52967 plus 38412?", "52967+38412",52967+38412
-"What is 583 minus 249?", "583-249",583-249
-"What's the result when you multiply 68435 by 145?", "68435*145",68435*145
-"Calculate 58721 divided by 234", "58721/234",58721/234
-"What is 916 plus 592?", "916+592",916+592
-"What is 73825 minus 468?", "73825-468",73825-468
-"Find the product of 926 and 438", "926*438",926*438
-"Calculate 85329 divided by 528", "85329/528",85329/528
-"What's the sum of 76435 and 485?", "76435+485",76435+485
-"What is 87249 minus 295?", "87249-295",87249-295
-"Compute 58427 times 369", "58427*369",58427*369
-"Calculate 95372 divided by 284", "95372/284",95372/284
-"What's the result of 86153 plus 372?", "86153+372",86153+372
-"What is 57634 minus 149?", "57634-149",57634-149
-"Find the product of 73895 and 236", "73895*236",73895*236
-"Calculate 96743 divided by 425", "96743/425",96743/425
-"How much is 57862 plus 382?", "57862+382",57862+382
-"What is 856 minus 374?", "856-374",856-374
-"What's the result when you multiply 638 by 275?", "638*275",638*275
-"Calculate 74589 divided by 256", "74589/256",74589/256
-"What is 84367 plus 263?", "84367+263",84367+263
-"What is 68293 minus 382?", "68293-382",68293-382
-"Find the product of 4273 and 182", "4273*182",4273*182
-"Calculate 92781 divided by 574", "92781/574",92781/574
-"What's the sum of 47385 and 362?", "47385+362",47385+362
-"What is 53864 minus 275?", "53864-275",53864-275
-"Compute 64792 times 395", "64792*395",64792*395
-"Calculate 79632 divided by 235", "79632/235",79632/235
-"What's the result of 98765 plus 342?", "98765+342",98765+342
-"What is 923 minus 476?", "923-476",923-476
-"Find the product of 63542 and 197", "63542*197",63542*197
-"Calculate 58726 divided by 394", "58726/394",58726/394
-"How much is 1837 plus 246?", "1837+246",1837+246
-"What is 84523 minus 368?", "84523-368",84523-368
-"What's the result when you multiply 93675 by 468?", "93675*468",93675*468
-"Calculate 847 divided by 362", "847/362",847/362
-"What is 62738 plus 495?", "62738+495",62738+495
-"What is 756 minus 273?", "756-273",756-273
-"Find the product of 47382 and 635", "47382*635",47382*635
-"Calculate 76394 divided by 253", "76394/253",76394/253
-"What's the sum of 82754 and 437?", "82754+437",82754+437
-"What is 63527 minus 458?", "63527-458",63527-458
-"Compute 729 times 384", "729*384",729*384
-"Calculate 58762 divided by 254", "58762/254",58762/254
-"What's the result of 937 plus 248?", "937+248",937+248
-"What is 85739 minus 475?", "85739-475",85739-475
-"Find the product of 53627 and 478", "53627*478",53627*478
-"Calculate 67583 divided by 387", "67583/387",67583/387
-"How much is 93574 plus 247?", "93574+247",93574+247
-"What is 834 minus 529?", "834-529",834-529
-"What's the result when you multiply 75638 by 492?", "75638*492",75638*492
-"Calculate 56342 divided by 175", "56342/175",56342/175
-"What is 87562 plus 246?", "87562+246",87562+246
-"What is 64893 minus 178?", "64893-178",64893-178
-"Find the product of 945 and 362", "945*362",945*362
-"Calculate 79385 divided by 247", "79385/247",79385/247
-"What's the sum of 86527 and 349?", "86527+349",86527+349
-"What is 628 minus 159?", "628-159",628-159
-"Compute 73985 times 487", "73985*487",73985*487
-"Calculate 85273 divided by 194", "85273/194",85273/194
-"What's the result of 64837 plus 539?", "64837+539",64837+539
-"What is 92746 minus 457?", "92746-457",92746-457
-"Find the product of 76493 and 257?", "76493*257",76493*257
-"Calculate 88567 divided by 231", "88567/231",88567/231
-"How much is 72836 plus 589?", "72836+589",72836+589
-"What is 824 minus 379?", "824-379",824-379
-"What's the result when you multiply 69547 by 138?", "69547*138",69547*138
-"Calculate 87526 divided by 257", "87526/257",87526/257
-"What is 69482 plus 185?", "69482+185",69482+185
-"What is 62735 minus 458?", "62735-458",62735-458
-"Find the product of 76592 and 582?", "76592*582",76592*582
-"Calculate 943 divided by 427?", "943/427",943/427
-"What's the sum of 876 and 293?", "876+293",876+293
-"What is 94627 minus 583?", "94627-583",94627-583
-"Compute 82394 times 157?", "82394*157",82394*157
-"Calculate 89573 divided by 634?", "89573/634",89573/634
-"What's the result of 92345 plus 374?", "92345+374",92345+374
-"What is 87635 minus 193?", "87635-193",87635-193
-"Find the product of 76592 and 358?", "76592*358",76592*358
-"Calculate 57324 divided by 396?", "57324/396",57324/396
-"How much is 69482 plus 236?", "69482+236",69482+236
-"What is 829 minus 527?", "829-527",829-527
-"What's the result when you multiply 76592 by 583?", "76592*583",76592*583
-"Calculate 42863 divided by 176", "42863/176",42863/176
-"What is 67593 plus 142?", "67593+142",67593+142
-"What is 59327 minus 173?", "59327-173",59327-173
-"Find the product of 76952 and 543?", "76952*543",76952*543
-"Calculate 879 divided by 337?", "879/337",879/337
-"What's the sum of 79564 and 438?", "79564+438",79564+438
-"What is 85736 minus 396?", "85736-396",85736-396
-"Compute 923 times 276?", "923*276",923*276
-"Calculate 76593 divided by 583?", "76593/583",76593/583
-"What's the result of 87452 plus 183?", "87452+183",87452+183
-"What is 93675 minus 157?", "93675-157",93675-157
-"Find the product of 874 and 196?", "874*196",874*196
-"Calculate 85734 divided by 295?", "85734/295",85734/295
-"How much is 92465 plus 187?", "92465+187",92465+187
-"What is 73956 minus 542?", "73956-542",73956-542
-"What's the result when you multiply 896 by 524?", "896*524",896*524
-"Calculate 87432 divided by 359?", "87432/359",87432/359
-"What is 76394 plus 436?", "76394+436",76394+436
-"What is 85632 minus 495?", "85632-495",85632-495
-"Find the product of 926 and 187?", "926*187",926*187
-"Calculate 83654 divided by 592?", "83654/592",83654/592
-"What's the sum of 65893 and 173?", "65893+173",65893+173
-"What is 927 minus 186?", "927-186",927-186
-"Compute 94356 times 587?", "94356*587",94356*587
-"Calculate 87632 divided by 147?", "87632/147",87632/147
-"What's the result of 76395 plus 582?", "76395+582",76395+582
-"What is 85764 minus 186?", "85764-186",85764-186
-"Find the product of 93765 and 562?", "93765*562",93765*562
-"Calculate 86547 divided by 538?", "86547/538",86547/538
-"How much is 76543 plus 194?", "76543+194",76543+194
-"What is 93256 minus 534?", "93256-534",93256-534
-"What's the result when you multiply 873 by 196?", "873*196",873*196
-"Calculate 93475 divided by 195?", "93475/195",93475/195
-"What is 93186 plus 475?", "93186+475",93186+475
-"What is 86543 minus 196?", "86543-196",86543-196
-"Find the product of 987654321 and 123?", "987654321*123",987654321*123
-"Calculate 9876543210 divided by 12345?", "9876543210/12345",9876543210/12345
-"What's the sum of 12345 and 67890?", "12345+67890",12345+67890
-"What is 98989898 minus 45454545?", "98989898-45454545",98989898-45454545
-"Compute 1313 times 2424?", "1313*2424",1313*2424
-"Calculate 987654321 divided by 1000?", "987654321/1000",987654321/1000
-"What's the result of 543210 plus 109876?", "543210+109876",543210+109876
-"What is 876543 minus 456789?", "876543-456789",876543-456789
-"Find the product of 99999 and 88888?", "99999*88888",99999*88888
-"Calculate 123456789 divided by 98765?", "123456789/98765",123456789/98765
-"How much is 1000000 plus 2000000?", "1000000+2000000",1000000+2000000
-"What is 7654321 minus 1234567?", "7654321-1234567",7654321-1234567
-"What is 951 multiplied by the sum of 753 and 159?", "951*(753+159)",951*(753+159)
-"Calculate 876543210 divided by 987654?", "876543210/987654",876543210/987654
-"What's the sum of 11111, 22222 and 33333?", "11111+22222+33333",11111+22222+33333
-"What is 999999 minus 555555?", "999999-555555",999999-555555
-"Compute 456 times the result of 123 plus 789?", "456*(123+789)",456*(123+789)
-"Calculate 9876543210 divided by the sum of 987 and 654?", "9876543210/(987+654)",9876543210/(987+654)
-"How much is 13579 plus 97531?", "13579+97531",13579+97531
-"What is 999888 minus 888777?", "999888-888777",999888-888777
-"Find the product of 147, 258 and 369?", "147*258*369",147*258*369
-"Calculate 14725836 divided by 963?", "14725836/963",14725836/963
-"What's the result of the sum of 123 and 456, multiplied by 789?", "(123+456)*789",(123+456)*789
-"What is the difference of 987 and 654, times 321?", "(987-654)*321",(987-654)*321
-"Compute 1000 times 2000 divided by 500?", "1000*2000/500",1000*2000/500
-"Calculate 999999 divided by the product of 111 and 222?", "999999/(111*222)",999999/(111*222)
-"How much is 123456 plus the result of 654321 multiplied by 456?", "123456+654321*456",123456+654321*456
-"What is 987654 minus the product of 31415 and 92?", "987654-(31415*92)",987654-(31415*92)
-"Find the product of the sum of 111 and 222 and the sum of 333 and 444?", "(111+222)*(333+444)",(111+222)*(333+444)
-"Calculate 987654321 divided by the product of 123 and 456?", "987654321/(123*456)",987654321/(123*456)
-"What's the sum of 1111 times 2 and 3333 times 4?", "1111*2+3333*4",1111*2+3333*4
-"What is 55555 minus the sum of 11111 and 22222?", "55555-(11111+22222)",55555-(11111+22222)
-"Compute the product of the sum of 12 and 34 and the sum of 56 and 78?", "(12+34)*(56+78)",(12+34)*(56+78)
-"Calculate the result of 9876 divided by 54, multiplied by 32?", "(9876/54)*32",(9876/54)*32
-"How much is 135792 plus 246813 minus 975318?", "135792+246813-975318",135792+246813-975318
-"What is 89 times 98 plus 76 times 67?", "89*98+76*67",89*98+76*67
-"Find the product of 123 and 987 divided by 456?", "123*987/456",123*987/456
-"Calculate 654321 divided by 789 plus 456?", "654321/789+456",654321/789+456
-"What's the result of the sum of 1234 and 5678, divided by 9?", "(1234+5678)/9",(1234+5678)/9
-"What is the difference of 7890 and 1234, divided by 56?", "(7890-1234)/56",(7890-1234)/56
-"Compute 987 times 654 plus 321 times 123?", "987*654+321*123",987*654+321*123
-"Calculate the result of 123456 divided by 789, multiplied by 456?", "(123456/789)*456",(123456/789)*456
-"How much is 111 plus 222 plus 333 plus 444 plus 555?", "111+222+333+444+555",111+222+333+444+555
-"What is 98765 minus 12345 minus 67890?", "98765-12345-67890",98765-12345-67890
-"Find the product of 135 and 975 divided by 225?", "135*975/225",135*975/225
-"Calculate 9876543 divided by 2345 times 678?", "9876543/2345*678",9876543/2345*678
-"What's the sum of 1234 times 56 and 7890 times 12?", "1234*56+7890*12",1234*56+7890*12
-"What is 77777 minus 33333 plus 11111?", "77777-33333+11111",77777-33333+11111
-"Compute the product of the sum of 123 and 456 and the sum of 789 and 321?", "(123+456)*(789+321)",(123+456)*(789+321)
-"Calculate the result of 987654 divided by 321, multiplied by the result of 654 divided by 987?", "(987654/321)*(654/987)",(987654/321)*(654/987)
-"How much is 12345 plus the result of 67890 multiplied by 13579?", "12345+67890*13579",12345+67890*13579
-"What is 98765 minus the product of 43210 and 56789?", "98765-43210*56789",98765-43210*56789
-"Find the product of 111, 222, 333 and 444?", "111*222*333*444",111*222*333*444
-"Calculate 987654321 divided by 12345 plus 67890?", "987654321/12345+67890",987654321/12345+67890
-"What's the result of 135 times 246 plus 357 times 468?", "135*246+357*468",135*246+357*468
-"What is 9999 minus the product of 8888 and 7777 plus 6666?", "9999-8888*7777+6666",9999-8888*7777+6666
-"Compute the product of the sum of 12, 34 and 56 and the sum of 78, 90 and 12?", "(12+34+56)*(78+90+12)",(12+34+56)*(78+90+12)
-"Calculate the result of 98765 divided by 4321, multiplied by the result of 56789 divided by 9876?", "(98765/4321)*(56789/9876)",(98765/4321)*(56789/9876)
-"Find the product of the sum of 123 and 456, the sum of 789 and 321, and the sum of 654 and 987?", "(123+456)*(789+321)*(654+987)",(123+456)*(789+321)*(654+987)
-"Calculate the result of 987654321 divided by 123456789, multiplied by itself?", "(987654321/123456789)*(987654321/123456789)",(987654321/123456789)*(987654321/123456789)
-"What's the sum of 1234 times 5678 and 9876 times 5432?", "1234*5678+9876*5432",1234*5678+9876*5432
-"What is 12345 minus 6789 plus 54321 minus 9876?", "12345-6789+54321-9876",12345-6789+54321-9876
-"Compute 123 times 456 plus 789 times 321?", "123*456+789*321",123*456+789*321
-"Calculate 987654 divided by 321 plus 654 divided by 987?", "987654/321+654/987",987654/321+654/987
-"How much is 111222 plus 333444 plus 555666 plus 777888?", "111222+333444+555666+777888",111222+333444+555666+777888
-"What is 999888 minus 777666 minus 555444 minus 333222?", "999888-777666-555444-333222",999888-777666-555444-333222
-"Find the product of 1111, 2222, 3333 and 4444?", "1111*2222*3333*4444",1111*2222*3333*4444
-"Calculate 9876543210 divided by 1357 times 2468?", "9876543210/1357*2468",9876543210/1357*2468
-"What's the result of the sum of 1234 and 5678, multiplied by the sum of 9012 and 3456?", "(1234+5678)*(9012+3456)",(1234+5678)*(9012+3456)
-"Compute the sum of 12 times 34, 56 times 78, and 90 times 12?", "(12*34)+(56*78)+(90*12)",(12*34)+(56*78)+(90*12)
-"Calculate the result of 987654 divided by 321, multiplied by the result of 654987 divided by 123456?", "(987654/321)*(654987/123456)",(987654/321)*(654987/123456)
-"How much is 135792 plus the result of 246813 multiplied by 975318 divided by 864209?", "135792+246813*975318/864209",135792+246813*975318/864209
-"What is 98765 minus the product of 43210 and 5 plus the product of 6789 and 12?", "98765-43210*5+6789*12",98765-43210*5+6789*12
-"Find the product of 111, 222 and the sum of 333 and 444?", "111*222*(333+444)",111*222*(333+444)
-"Calculate 987654321 divided by 123456 times 789 plus 321?", "987654321/123456*789+321",987654321/123456*789+321
-"What's the sum of 987 times 654, 321 times 654 and 987 times 321?", "987*654+321*654+987*321",987*654+321*654+987*321
-"What is 9876 minus 5432 minus 1098 plus 7654 minus 3210?", "9876-5432-1098+7654-3210",9876-5432-1098+7654-3210
-"Compute the product of the sum of 135 and 246, the sum of 357 and 468, and the sum of 579 and 680?", "(135+246)*(357+468)*(579+680)",(135+246)*(357+468)*(579+680)
-"Calculate the sum of 987654 divided by 321 and 654321 divided by 987?", "(987654/321)+(654321/987)",(987654/321)+(654321/987)
-"How much is 12345 plus 67890 plus the product of 12345 and 67890?", "12345+67890+12345*67890",12345+67890+12345*67890
-"What is 98765 minus 43210 plus the product of 98765 and 43210?", "98765-43210+98765*43210",98765-43210+98765*43210
-"Find the product of 123456 and 654321 divided by 789456?", "123456*654321/789456",123456*654321/789456
-"Calculate 987654321 divided by 123456789 plus the product of 987654321 and 123456789?", "987654321/123456789+987654321*123456789",987654321/123456789+987654321*123456789
-"What's the result of 1357 times 2468 plus 9753 times 8642?", "1357*2468+9753*8642",1357*2468+9753*8642
-"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555?", "9999-8888+7777-6666+5555",9999-8888+7777-6666+5555
-"Compute the result of the sum of 1111 and 2222, multiplied by the sum of 3333 and 4444, divided by the sum of 5555 and 6666?", "(1111+2222)*(3333+4444)/(5555+6666)",(1111+2222)*(3333+4444)/(5555+6666)
-"Calculate the result of 987654 divided by 321, multiplied by the result of 654 divided by 987, plus the result of 123 divided by 456?", "(987654/321)*(654/987)+(123/456)",(987654/321)*(654/987)+(123/456)
-"How much is 135792 plus 246813 plus 975318 plus 864209 plus 753198?", "135792+246813+975318+864209+753198",135792+246813+975318+864209+753198
-"What is 999888 minus 777666 minus 555444 minus 333222 minus 111000?", "999888-777666-555444-333222-111000",999888-777666-555444-333222-111000
-"Find the product of 11, 22, 33, 44, 55 and 66?", "11*22*33*44*55*66",11*22*33*44*55*66
-"Calculate 987654321 divided by 123 divided by 456 divided by 789?", "987654321/123/456/789",987654321/123/456/789
-"What's the sum of 1234 times 5678, 8765 times 4321 and 1357 times 9753?", "1234*5678+8765*4321+1357*9753",1234*5678+8765*4321+1357*9753
-"What is 98765 minus 43210 minus 12345 minus 67890 minus 54321?", "98765-43210-12345-67890-54321",98765-43210-12345-67890-54321
-"Compute the result of the sum of 135 and 246, multiplied by the sum of 357 and 468, divided by the sum of 579 and 680?", "(135+246)*(357+468)/(579+680)",(135+246)*(357+468)/(579+680)
-"Calculate the result of 987654 divided by 321, multiplied by the result of 654321 divided by 987, multiplied by the result of 123456 divided by 789?", "(987654/321)*(654321/987)*(123456/789)",(987654/321)*(654321/987)*(123456/789)
-"Find the product of the sum of 1, 2, 3, the sum of 4, 5, 6 and the sum of 7, 8, 9?", "(1+2+3)*(4+5+6)*(7+8+9)",(1+2+3)*(4+5+6)*(7+8+9)
-"Calculate the sum of 987654321 divided by 123456789 added to itself twice more?", "(987654321/123456789)+(987654321/123456789)+(987654321/123456789)",(987654321/123456789)+(987654321/123456789)+(987654321/123456789)
-"What's the result of 135 times 246 plus 357 times 468 plus 579 times 680 plus 791 times 802?", "135*246+357*468+579*680+791*802",135*246+357*468+579*680+791*802
-"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333?", "9999-8888+7777-6666+5555-4444+3333",9999-8888+7777-6666+5555-4444+3333
-"Compute the sum of 12 times 34 and 56 times 78, minus the product of 90 and 12, plus the product of 34 and 56?", "(12*34)+(56*78)-(90*12)+(34*56)",(12*34)+(56*78)-(90*12)+(34*56)
-"Calculate the result of 987654 divided by 321, multiplied by the result of 654987 divided by 123456, plus the result of 789012 divided by 345678?", "(987654/321)*(654987/123456)+(789012/345678)",(987654/321)*(654987/123456)+(789012/345678)
-"How much is 135792 plus 246813 plus 975318 minus 864209 minus 753198?", "135792+246813+975318-864209-753198",135792+246813+975318-864209-753198
-"What is 98765 minus 43210 plus 12345 minus 67890 plus 54321?", "98765-43210+12345-67890+54321",98765-43210+12345-67890+54321
-"Find the product of 111, 222 and 333 divided by the product of 444 and 555?", "111*222*333/(444*555)",111*222*333/(444*555)
-"Calculate 987654321 divided by 123456 times 789012 divided by 345678?", "987654321/123456*789012/345678",987654321/123456*789012/345678
-"What's the sum of 987 times 654, 321 times 654, 987 times 321 and 654 times 321?", "987*654+321*654+987*321+654*321",987*654+321*654+987*321+654*321
-"What is 9876 minus 5432 minus 1098 plus 7654 minus 3210 plus 9876?", "9876-5432-1098+7654-3210+9876",9876-5432-1098+7654-3210+9876
-"Compute the product of the sum of 135 and 246, the sum of 357 and 468, the sum of 579 and 680, and the sum of 791 and 802?", "(135+246)*(357+468)*(579+680)*(791+802)",(135+246)*(357+468)*(579+680)*(791+802)
-"Calculate the sum of 987654 divided by 321, 654321 divided by 987 and 123456 divided by 789?", "(987654/321)+(654321/987)+(123456/789)",(987654/321)+(654321/987)+(123456/789)
-"How much is 12345 plus 67890 plus the product of 12345 and 67890 plus the product of 54321 and 9876?", "12345+67890+12345*67890+54321*9876",12345+67890+12345*67890+54321*9876
-"What is 98765 minus 43210 plus the product of 98765 and 43210 minus the product of 12345 and 67890?", "98765-43210+98765*43210-12345*67890",98765-43210+98765*43210-12345*67890
-"Find the product of 123456, 654321, 789012 and 210987 divided by 987654321?", "123456*654321*789012*210987/987654321",123456*654321*789012*210987/987654321
-"Calculate 987654321 divided by 123456789 plus the product of 987654321 and 123456789 minus the product of 123456789 and 987654321?", "987654321/123456789+987654321*123456789-123456789*987654321",987654321/123456789+987654321*123456789-123456789*987654321
-"What's the result of 1357 times 2468 plus 9753 times 8642 minus 1357 times 8642 minus 9753 times 2468?", "1357*2468+9753*8642-1357*8642-9753*2468",1357*2468+9753*8642-1357*8642-9753*2468
-"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333 minus 2222?", "9999-8888+7777-6666+5555-4444+3333-2222",9999-8888+7777-6666+5555-4444+3333-2222
-"Compute the result of the sum of 1111 and 2222, multiplied by the sum of 3333 and 4444, divided by the sum of 5555 and 6666, multiplied by the sum of 7777 and 8888?", "(1111+2222)*(3333+4444)/(5555+6666)*(7777+8888)",(1111+2222)*(3333+4444)/(5555+6666)*(7777+8888)
-"Calculate the result of 987654 divided by 321, multiplied by 654 divided by 987, plus the result of 123 divided by 456 multiplied by 789 divided by 123?", "(987654/321)*(654/987)+(123/456)*(789/123)",(987654/321)*(654/987)+(123/456)*(789/123)
-"How much is 135792 plus 246813 plus 975318 plus 864209 plus 753198 plus 642087 plus 531976?", "135792+246813+975318+864209+753198+642087+531976",135792+246813+975318+864209+753198+642087+531976
-"What is 999888 minus 777666 minus 555444 minus 333222 minus 111000 plus 999888 plus 777666?", "999888-777666-555444-333222-111000+999888+777666",999888-777666-555444-333222-111000+999888+777666
-"Find the product of 11, 22, 33, 44, 55, 66, 77 and 88?", "11*22*33*44*55*66*77*88",11*22*33*44*55*66*77*88
-"Calculate 987654321 divided by 123, then by 456, then by 789, then by 321, then by 654, then by 987?", "987654321/123/456/789/321/654/987",987654321/123/456/789/321/654/987
-"What's the sum of 1234 times 5678, 8765 times 4321, 1357 times 9753, 2468 times 8642 and 3579 times 7531?", "1234*5678+8765*4321+1357*9753+2468*8642+3579*7531",1234*5678+8765*4321+1357*9753+2468*8642+3579*7531
-"What is 98765 minus 43210 minus 12345 minus 67890 minus 54321 plus 98765 plus 43210?", "98765-43210-12345-67890-54321+98765+43210",98765-43210-12345-67890-54321+98765+43210
-"Compute the result of the sum of 135 and 246, multiplied by the sum of 357 and 468, divided by the sum of 579 and 680, multiplied by the sum of 791 and 802, divided by the sum of 913 and 24?", "(135+246)*(357+468)/(579+680)*(791+802)/(913+24)",(135+246)*(357+468)/(579+680)*(791+802)/(913+24)
-"Calculate the result of 987654 divided by 321, multiplied by 654321 divided by 987, multiplied by 123456 divided by 789, multiplied by 654987 divided by 321?", "(987654/321)*(654321/987)*(123456/789)*(654987/321)",(987654/321)*(654321/987)*(123456/789)*(654987/321)
-"Find the product of the sum of 1, 2, 3, 4, the sum of 5, 6, 7, 8 and the sum of 9, 10, 11, 12?", "(1+2+3+4)*(5+6+7+8)*(9+10+11+12)",(1+2+3+4)*(5+6+7+8)*(9+10+11+12)
-"Calculate the sum of 987654321 divided by 123456789 added to itself three more times?", "(987654321/123456789)+(987654321/123456789)+(987654321/123456789)+(987654321/123456789)",(987654321/123456789)+(987654321/123456789)+(987654321/123456789)+(987654321/123456789)
-"What's the result of 135 times 246 plus 357 times 468 plus 579 times 680 plus 791 times 802 plus 913 times 24 plus 135 times 468?", "135*246+357*468+579*680+791*802+913*24+135*468",135*246+357*468+579*680+791*802+913*24+135*468
-"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333 minus 2222 plus 1111?", "9999-8888+7777-6666+5555-4444+3333-2222+1111",9999-8888+7777-6666+5555-4444+3333-2222+1111
-"Compute the sum of 12 times 34 and 56 times 78, minus the product of 90 and 12, plus the product of 34 and 56, minus the product of 78 and 90, plus the product of 12 and 56?", "(12*34)+(56*78)-(90*12)+(34*56)-(78*90)+(12*56)",(12*34)+(56*78)-(90*12)+(34*56)-(78*90)+(12*56)
-"Calculate the result of 987654 divided by 321, multiplied by 654987 divided by 123456, plus the result of 789012 divided by 345678 multiplied by 456789 divided by 987654?", "(987654/321)*(654987/123456)+(789012/345678)*(456789/987654)",(987654/321)*(654987/123456)+(789012/345678)*(456789/987654)
-"How much is 135792 plus 246813 plus 975318 minus 864209 minus 753198 plus 642087 plus 531976 minus 420865?", "135792+246813+975318-864209-753198+642087+531976-420865",135792+246813+975318-864209-753198+642087+531976-420865
-"What is 98765 minus 43210 plus 12345 minus 67890 plus 54321 minus 98765 plus 43210?", "98765-43210+12345-67890+54321-98765+43210",98765-43210+12345-67890+54321-98765+43210
-"Find the product of 111, 222, 333 divided by the product of 444, 555 and 666?", "111*222*333/(444*555*666)",111*222*333/(444*555*666)
-"Calculate 987654321 divided by 123456 times 789012 divided by 345678 times 901234 divided by 567890?", "987654321/123456*789012/345678*901234/567890",987654321/123456*789012/345678*901234/567890
-"What's the sum of 987 times 654, 321 times 654, 987 times 321, 654 times 321, 123 times 987 and 456 times 789?", "987*654+321*654+987*321+654*321+123*987+456*789",987*654+321*654+987*321+654*321+123*987+456*789
-"What is 9876 minus 5432 minus 1098 plus 7654 minus 3210 plus 9876 minus 5432 plus 1098?", "9876-5432-1098+7654-3210+9876-5432+1098",9876-5432-1098+7654-3210+9876-5432+1098
-"Compute the product of the sum of 135 and 246, the sum of 357 and 468, the sum of 579 and 680, the sum of 791 and 802, the sum of 913 and 24, and the sum of 135 and 357?", "(135+246)*(357+468)*(579+680)*(791+802)*(913+24)*(135+357)",(135+246)*(357+468)*(579+680)*(791+802)*(913+24)*(135+357)
-"Calculate the sum of 987654 divided by 321, 654321 divided by 987, 123456 divided by 789, 654987 divided by 321 and 987123 divided by 654?", "(987654/321)+(654321/987)+(123456/789)+(654987/321)+(987123/654)",(987654/321)+(654321/987)+(123456/789)+(654987/321)+(987123/654)
-"How much is 12345 plus 67890 plus the product of 12345 and 67890 plus the product of 54321 and 9876 plus the product of 13579 and 97531 plus the product of 24680 and 86420?", "12345+67890+12345*67890+54321*9876+13579*97531+24680*86420",12345+67890+12345*67890+54321*9876+13579*97531+24680*86420
-"What is 98765 minus 43210 plus the product of 98765 and 43210 minus the product of 12345 and 67890 plus the product of 54321 and 9876 minus the product of 13579 and 97531?", "98765-43210+98765*43210-12345*67890+54321*9876-13579*97531",98765-43210+98765*43210-12345*67890+54321*9876-13579*97531
-"Find the product of 123456, 654321, 789012 and 210987 divided by 987654321 multiplied by 123456789 divided by 987654321?", "123456*654321*789012*210987/987654321*123456789/987654321",123456*654321*789012*210987/987654321*123456789/987654321
-"Calculate 987654321 divided by 123456789 plus the product of 987654321 and 123456789 minus the product of 123456789 and 987654321 plus 987654321 divided by 123456789?", "987654321/123456789+987654321*123456789-123456789*987654321+987654321/123456789",987654321/123456789+987654321*123456789-123456789*987654321+987654321/123456789
-"What's the result of 1357 times 2468 plus 9753 times 8642 minus 1357 times 8642 minus 9753 times 2468 plus 1357 times 9753 plus 2468 times 8642?", "1357*2468+9753*8642-1357*8642-9753*2468+1357*9753+2468*8642",1357*2468+9753*8642-1357*8642-9753*2468+1357*9753+2468*8642
-"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333 minus 2222 plus 1111 minus 9999 plus 8888?", "9999-8888+7777-6666+5555-4444+3333-2222+1111-9999+8888",9999-8888+7777-6666+5555-4444+3333-2222+1111-9999+8888
-"Compute the result of the sum of 1111 and 2222, multiplied by the sum of 3333 and 4444, divided by the sum of 5555 and 6666, multiplied by the sum of 7777 and 8888, divided by the sum of 9999 and 1111?", "(1111+2222)*(3333+4444)/(5555+6666)*(7777+8888)/(9999+1111)",(1111+2222)*(3333+4444)/(5555+6666)*(7777+8888)/(9999+1111)
-"Calculate the result of 987654 divided by 321, multiplied by 654 divided by 987, plus the result of 123 divided by 456 multiplied by 789 divided by 123, minus the result of 321 divided by 654 multiplied by 987 divided by 321?", "(987654/321)*(654/987)+(123/456)*(789/123)-(321/654)*(987/321)",(987654/321)*(654/987)+(123/456)*(789/123)-(321/654)*(987/321)
-"How much is 135792 plus 246813 plus 975318 plus 864209 plus 753198 plus 642087 plus 531976 plus 420865 plus 310754 plus 200643?", "135792+246813+975318+864209+753198+642087+531976+420865+310754+200643",135792+246813+975318+864209+753198+642087+531976+420865+310754+200643
-"What is 999888 minus 777666 minus 555444 minus 333222 minus 111000 plus 999888 plus 777666 plus 555444 plus 333222 plus 111000?", "999888-777666-555444-333222-111000+999888+777666+555444+333222+111000",999888-777666-555444-333222-111000+999888+777666+555444+333222+111000
-"Find the product of 11, 22, 33, 44, 55, 66, 77, 88, 99 and 11?", "11*22*33*44*55*66*77*88*99*11",11*22*33*44*55*66*77*88*99*11
-"Calculate 987654321 divided by 123, then by 456, then by 789, then by 321, then by 654, then by 987, then by 123, then by 456, then by 789?", "987654321/123/456/789/321/654/987/123/456/789",987654321/123/456/789/321/654/987/123/456/789
-"What's the sum of 1234 times 5678, 8765 times 4321, 1357 times 9753, 2468 times 8642, 3579 times 7531 and 4680 times 6420?", "1234*5678+8765*4321+1357*9753+2468*8642+3579*7531+4680*6420",1234*5678+8765*4321+1357*9753+2468*8642+3579*7531+4680*6420
-"What is 98765 minus 43210 minus 12345 minus 67890 minus 54321 plus 98765 plus 43210 plus 12345 plus 67890 plus 54321?", "98765-43210-12345-67890-54321+98765+43210+12345+67890+54321",98765-43210-12345-67890-54321+98765+43210+12345+67890+54321
-"Compute the result of the sum of 135 and 246, multiplied by the sum of 357 and 468, divided by the sum of 579 and 680, multiplied by the sum of 791 and 802, divided by the sum of 913 and 24, multiplied by the sum of 135 and 246, divided by the sum of 357 and 468?", "(135+246)*(357+468)/(579+680)*(791+802)/(913+24)*(135+246)/(357+468)",(135+246)*(357+468)/(579+680)*(791+802)/(913+24)*(135+246)/(357+468)
-"Calculate the result of 987654 divided by 321, multiplied by 654321 divided by 987, multiplied by 123456 divided by 789, multiplied by 654987 divided by 321, multiplied by 987123 divided by 654, multiplied by 321987 divided by 123?", "(987654/321)*(654321/987)*(123456/789)*(654987/321)*(987123/654)*(321987/123)",(987654/321)*(654321/987)*(123456/789)*(654987/321)*(987123/654)*(321987/123)
+"prompt","expression","answer"
+"What is 4829 multiplied by 736?", 4829*736,3554144.0
+"Calculate 67392 divided by 85", 67392/85,792.8470588235294
+"What's the result of 19583 plus 42967?", 19583+42967,62550.0
+"Compute 86729 minus 35214", 86729-35214,51515.0
+"What is the product of 943 and 678?", 943*678,639354.0
+"Calculate the sum of 69384 and 128", 69384+128,69512.0
+"What's 23786 divided by 452?", 23786/452,52.623893805309734
+"Find the product of 84632 and 375", 84632*375,31737000.0
+"Calculate 1254 plus 863", 1254+863,2117.0
+"What is 79281 minus 93?", 79281-93,79188.0
+"What's the result when you multiply 35721 by 629?", 35721*629,22468509.0
+"Calculate 87301 divided by 462", 87301/462,188.96320346320346
+"How much is 738 plus 1425?", 738+1425,2163.0
+"What is 64872 minus 144?", 64872-144,64728.0
+"Find the product of 879 and 652", 879*652,573108.0
+"Calculate 58743 divided by 231", 58743/231,254.2987012987013
+"What's the sum of 27549 and 63852?", 27549+63852,91401.0
+"What is 95428 minus 28973?", 95428-28973,66455.0
+"Compute 136475 times 589", 136475*589,80383775.0
+"Calculate 47863 divided by 921", 47863/921,51.9685124864278
+"What's the result of 524 plus 937?", 524+937,1461.0
+"What is 72541 minus 167?", 72541-167,72374.0
+"Find the product of 38426 and 652", 38426*652,25053752.0
+"Calculate 65831 divided by 427", 65831/427,154.17096018735364
+"How much is 2453 plus 1892?", 2453+1892,4345.0
+"What is 74529 minus 183?", 74529-183,74346.0
+"What's the result when you multiply 45872 by 384?", 45872*384,17614848.0
+"Calculate 51240 divided by 152", 51240/152,337.10526315789474
+"What is 1436 plus 275?", 1436+275,1711.0
+"What is 83694 minus 342?", 83694-342,83352.0
+"Find the product of 875 and 642", 875*642,561750.0
+"Calculate 74632 divided by 268", 74632/268,278.4776119402985
+"What's the sum of 96241 and 357?", 96241+357,96598.0
+"What is 734 minus 258?", 734-258,476.0
+"Compute 52938 times 786", 52938*786,41609268.0
+"Calculate 67859 divided by 823", 67859/823,82.45321992709599
+"What's the result of 853 plus 426?", 853+426,1279.0
+"What is 1274 minus 386?", 1274-386,888.0
+"Find the product of 64527 and 381", 64527*381,24584787.0
+"Calculate 92516 divided by 287", 92516/287,322.35540069686414
+"How much is 52967 plus 38412?", 52967+38412,91379.0
+"What is 583 minus 249?", 583-249,334.0
+"What's the result when you multiply 68435 by 145?", 68435*145,9923075.0
+"Calculate 58721 divided by 234", 58721/234,250.94444444444446
+"What is 916 plus 592?", 916+592,1508.0
+"What is 73825 minus 468?", 73825-468,73357.0
+"Find the product of 926 and 438", 926*438,405588.0
+"Calculate 85329 divided by 528", 85329/528,161.60795454545453
+"What's the sum of 76435 and 485?", 76435+485,76920.0
+"What is 87249 minus 295?", 87249-295,86954.0
+"Compute 58427 times 369", 58427*369,21559563.0
+"Calculate 95372 divided by 284", 95372/284,335.8169014084507
+"What's the result of 86153 plus 372?", 86153+372,86525.0
+"What is 57634 minus 149?", 57634-149,57485.0
+"Find the product of 73895 and 236", 73895*236,17439220.0
+"Calculate 96743 divided by 425", 96743/425,227.6305882352941
+"How much is 57862 plus 382?", 57862+382,58244.0
+"What is 856 minus 374?", 856-374,482.0
+"What's the result when you multiply 638 by 275?", 638*275,175450.0
+"Calculate 74589 divided by 256", 74589/256,291.36328125
+"What is 84367 plus 263?", 84367+263,84630.0
+"What is 68293 minus 382?", 68293-382,67911.0
+"Find the product of 4273 and 182", 4273*182,777686.0
+"Calculate 92781 divided by 574", 92781/574,161.63937282229966
+"What's the sum of 47385 and 362?", 47385+362,47747.0
+"What is 53864 minus 275?", 53864-275,53589.0
+"Compute 64792 times 395", 64792*395,25592840.0
+"Calculate 79632 divided by 235", 79632/235,338.8595744680851
+"What's the result of 98765 plus 342?", 98765+342,99107.0
+"What is 923 minus 476?", 923-476,447.0
+"Find the product of 63542 and 197", 63542*197,12517774.0
+"Calculate 58726 divided by 394", 58726/394,149.0507614213198
+"How much is 1837 plus 246?", 1837+246,2083.0
+"What is 84523 minus 368?", 84523-368,84155.0
+"What's the result when you multiply 93675 by 468?", 93675*468,43839900.0
+"Calculate 847 divided by 362", 847/362,2.339779005524862
+"What is 62738 plus 495?", 62738+495,63233.0
+"What is 756 minus 273?", 756-273,483.0
+"Find the product of 47382 and 635", 47382*635,30087570.0
+"Calculate 76394 divided by 253", 76394/253,301.9525691699605
+"What's the sum of 82754 and 437?", 82754+437,83191.0
+"What is 63527 minus 458?", 63527-458,63069.0
+"Compute 729 times 384", 729*384,279936.0
+"Calculate 58762 divided by 254", 58762/254,231.3464566929134
+"What's the result of 937 plus 248?", 937+248,1185.0
+"What is 85739 minus 475?", 85739-475,85264.0
+"Find the product of 53627 and 478", 53627*478,25633706.0
+"Calculate 67583 divided by 387", 67583/387,174.63307493540051
+"How much is 93574 plus 247?", 93574+247,93821.0
+"What is 834 minus 529?", 834-529,305.0
+"What's the result when you multiply 75638 by 492?", 75638*492,37213896.0
+"Calculate 56342 divided by 175", 56342/175,321.95428571428573
+"What is 87562 plus 246?", 87562+246,87808.0
+"What is 64893 minus 178?", 64893-178,64715.0
+"Find the product of 945 and 362", 945*362,342090.0
+"Calculate 79385 divided by 247", 79385/247,321.39676113360326
+"What's the sum of 86527 and 349?", 86527+349,86876.0
+"What is 628 minus 159?", 628-159,469.0
+"Compute 73985 times 487", 73985*487,36030695.0
+"Calculate 85273 divided by 194", 85273/194,439.5515463917526
+"What's the result of 64837 plus 539?", 64837+539,65376.0
+"What is 92746 minus 457?", 92746-457,92289.0
+"Find the product of 76493 and 257?", 76493*257,19658701.0
+"Calculate 88567 divided by 231", 88567/231,383.4069264069264
+"How much is 72836 plus 589?", 72836+589,73425.0
+"What is 824 minus 379?", 824-379,445.0
+"What's the result when you multiply 69547 by 138?", 69547*138,9597486.0
+"Calculate 87526 divided by 257", 87526/257,340.568093385214
+"What is 69482 plus 185?", 69482+185,69667.0
+"What is 62735 minus 458?", 62735-458,62277.0
+"Find the product of 76592 and 582?", 76592*582,44576544.0
+"Calculate 943 divided by 427?", 943/427,2.208430913348946
+"What's the sum of 876 and 293?", 876+293,1169.0
+"What is 94627 minus 583?", 94627-583,94044.0
+"Compute 82394 times 157?", 82394*157,12935858.0
+"Calculate 89573 divided by 634?", 89573/634,141.28233438485805
+"What's the result of 92345 plus 374?", 92345+374,92719.0
+"What is 87635 minus 193?", 87635-193,87442.0
+"Find the product of 76592 and 358?", 76592*358,27419936.0
+"Calculate 57324 divided by 396?", 57324/396,144.75757575757575
+"How much is 69482 plus 236?", 69482+236,69718.0
+"What is 829 minus 527?", 829-527,302.0
+"What's the result when you multiply 76592 by 583?", 76592*583,44653136.0
+"Calculate 42863 divided by 176", 42863/176,243.53977272727272
+"What is 67593 plus 142?", 67593+142,67735.0
+"What is 59327 minus 173?", 59327-173,59154.0
+"Find the product of 76952 and 543?", 76952*543,41784936.0
+"Calculate 879 divided by 337?", 879/337,2.608308605341246
+"What's the sum of 79564 and 438?", 79564+438,80002.0
+"What is 85736 minus 396?", 85736-396,85340.0
+"Compute 923 times 276?", 923*276,254748.0
+"Calculate 76593 divided by 583?", 76593/583,131.37735849056602
+"What's the result of 87452 plus 183?", 87452+183,87635.0
+"What is 93675 minus 157?", 93675-157,93518.0
+"Find the product of 874 and 196?", 874*196,171304.0
+"Calculate 85734 divided by 295?", 85734/295,290.6237288135593
+"How much is 92465 plus 187?", 92465+187,92652.0
+"What is 73956 minus 542?", 73956-542,73414.0
+"What's the result when you multiply 896 by 524?", 896*524,469504.0
+"Calculate 87432 divided by 359?", 87432/359,243.5431754874652
+"What is 76394 plus 436?", 76394+436,76830.0
+"What is 85632 minus 495?", 85632-495,85137.0
+"Find the product of 926 and 187?", 926*187,173162.0
+"Calculate 83654 divided by 592?", 83654/592,141.30743243243242
+"What's the sum of 65893 and 173?", 65893+173,66066.0
+"What is 927 minus 186?", 927-186,741.0
+"Compute 94356 times 587?", 94356*587,55386972.0
+"Calculate 87632 divided by 147?", 87632/147,596.1360544217687
+"What's the result of 76395 plus 582?", 76395+582,76977.0
+"What is 85764 minus 186?", 85764-186,85578.0
+"Find the product of 93765 and 562?", 93765*562,52695930.0
+"Calculate 86547 divided by 538?", 86547/538,160.86802973977694
+"How much is 76543 plus 194?", 76543+194,76737.0
+"What is 93256 minus 534?", 93256-534,92722.0
+"What's the result when you multiply 873 by 196?", 873*196,171108.0
+"Calculate 93475 divided by 195?", 93475/195,479.35897435897436
+"What is 93186 plus 475?", 93186+475,93661.0
+"What is 86543 minus 196?", 86543-196,86347.0
+"Find the product of 987654321 and 123?", 987654321*123,121481481483.0
+"Calculate 9876543210 divided by 12345?", 9876543210/12345,800044.0024301336
+"What's the sum of 12345 and 67890?", 12345+67890,80235.0
+"What is 98989898 minus 45454545?", 98989898-45454545,53535353.0
+"Compute 1313 times 2424?", 1313*2424,3182712.0
+"Calculate 987654321 divided by 1000?", 987654321/1000,987654.321
+"What's the result of 543210 plus 109876?", 543210+109876,653086.0
+"What is 876543 minus 456789?", 876543-456789,419754.0
+"Find the product of 99999 and 88888?", 99999*88888,8888711112.0
+"Calculate 123456789 divided by 98765?", 123456789/98765,1250.0054573988762
+"How much is 1000000 plus 2000000?", 1000000+2000000,3000000.0
+"What is 7654321 minus 1234567?", 7654321-1234567,6419754.0
+"What is 951 multiplied by the sum of 753 and 159?", 951*(753+159),867312.0
+"Calculate 876543210 divided by 987654?", 876543210/987654,887.5002885625938
+"What's the sum of 11111, 22222 and 33333?", 11111+22222+33333,66666.0
+"What is 999999 minus 555555?", 999999-555555,444444.0
+"Compute 456 times the result of 123 plus 789?", 456*(123+789),415872.0
+"Calculate 9876543210 divided by the sum of 987 and 654?", 9876543210/(987+654),6018612.559414991
+"How much is 13579 plus 97531?", 13579+97531,111110.0
+"What is 999888 minus 888777?", 999888-888777,111111.0
+"Find the product of 147, 258 and 369?", 147*258*369,13994694.0
+"Calculate 14725836 divided by 963?", 14725836/963,15291.626168224298
+"What's the result of the sum of 123 and 456, multiplied by 789?", (123+456)*789,456831.0
+"What is the difference of 987 and 654, times 321?", (987-654)*321,106893.0
+"Compute 1000 times 2000 divided by 500?", 1000*2000/500,4000.0
+"Calculate 999999 divided by the product of 111 and 222?", 999999/(111*222),40.58108108108108
+"How much is 123456 plus the result of 654321 multiplied by 456?", 123456+654321*456,298493832.0
+"What is 987654 minus the product of 31415 and 92?", 987654-(31415*92),-1902526.0
+"Find the product of the sum of 111 and 222 and the sum of 333 and 444?", (111+222)*(333+444),258741.0
+"Calculate 987654321 divided by the product of 123 and 456?", 987654321/(123*456),17609.012997432605
+"What's the sum of 1111 times 2 and 3333 times 4?", 1111*2+3333*4,15554.0
+"What is 55555 minus the sum of 11111 and 22222?", 55555-(11111+22222),22222.0
+"Compute the product of the sum of 12 and 34 and the sum of 56 and 78?", (12+34)*(56+78),6164.0
+"Calculate the result of 9876 divided by 54, multiplied by 32?", (9876/54)*32,5852.444444444444
+"How much is 135792 plus 246813 minus 975318?", 135792+246813-975318,-592713.0
+"What is 89 times 98 plus 76 times 67?", 89*98+76*67,13814.0
+"Find the product of 123 and 987 divided by 456?", 123*987/456,266.23026315789474
+"Calculate 654321 divided by 789 plus 456?", 654321/789+456,1285.3041825095056
+"What's the result of the sum of 1234 and 5678, divided by 9?", (1234+5678)/9,768.0
+"What is the difference of 7890 and 1234, divided by 56?", (7890-1234)/56,118.85714285714286
+"Compute 987 times 654 plus 321 times 123?", 987*654+321*123,684981.0
+"Calculate the result of 123456 divided by 789, multiplied by 456?", (123456/789)*456,71350.99619771863
+"How much is 111 plus 222 plus 333 plus 444 plus 555?", 111+222+333+444+555,1665.0
+"What is 98765 minus 12345 minus 67890?", 98765-12345-67890,18530.0
+"Find the product of 135 and 975 divided by 225?", 135*975/225,585.0
+"Calculate 9876543 divided by 2345 times 678?", 9876543/2345*678,2855563.391897654
+"What's the sum of 1234 times 56 and 7890 times 12?", 1234*56+7890*12,163784.0
+"What is 77777 minus 33333 plus 11111?", 77777-33333+11111,55555.0
+"Compute the product of the sum of 123 and 456 and the sum of 789 and 321?", (123+456)*(789+321),642690.0
+"Calculate the result of 987654 divided by 321, multiplied by the result of 654 divided by 987?", (987654/321)*(654/987),2038.73317614976
+"How much is 12345 plus the result of 67890 multiplied by 13579?", 12345+67890*13579,921890655.0
+"What is 98765 minus the product of 43210 and 56789?", 98765-43210*56789,-2453753925.0
+"Find the product of 111, 222, 333 and 444?", 111*222*333*444,3643368984.0
+"Calculate 987654321 divided by 12345 plus 67890?", 987654321/12345+67890,147894.40024301337
+"What's the result of 135 times 246 plus 357 times 468?", 135*246+357*468,200286.0
+"What is 9999 minus the product of 8888 and 7777 plus 6666?", 9999-8888*7777+6666,-69105311.0
+"Compute the product of the sum of 12, 34 and 56 and the sum of 78, 90 and 12?", (12+34+56)*(78+90+12),18360.0
+"Calculate the result of 98765 divided by 4321, multiplied by the result of 56789 divided by 9876?", (98765/4321)*(56789/9876),131.43224971362088
+"Find the product of the sum of 123 and 456, the sum of 789 and 321, and the sum of 654 and 987?", (123+456)*(789+321)*(654+987),1054654290.0
+"Calculate the result of 987654321 divided by 123456789, multiplied by itself?", (987654321/123456789)*(987654321/123456789),64.00000116640001
+"What's the sum of 1234 times 5678 and 9876 times 5432?", 1234*5678+9876*5432,60653084.0
+"What is 12345 minus 6789 plus 54321 minus 9876?", 12345-6789+54321-9876,50001.0
+"Compute 123 times 456 plus 789 times 321?", 123*456+789*321,309357.0
+"Calculate 987654 divided by 321 plus 654 divided by 987?", 987654/321+654/987,3077.46635229952
+"How much is 111222 plus 333444 plus 555666 plus 777888?", 111222+333444+555666+777888,1778220.0
+"What is 999888 minus 777666 minus 555444 minus 333222?", 999888-777666-555444-333222,-666444.0
+"Find the product of 1111, 2222, 3333 and 4444?", 1111*2222*3333*4444,36565159944984.0
+"Calculate 9876543210 divided by 1357 times 2468?", 9876543210/1357*2468,17962644541.10538
+"What's the result of the sum of 1234 and 5678, multiplied by the sum of 9012 and 3456?", (1234+5678)*(9012+3456),86178816.0
+"Compute the sum of 12 times 34, 56 times 78, and 90 times 12?", (12*34)+(56*78)+(90*12),5856.0
+"Calculate the result of 987654 divided by 321, multiplied by the result of 654987 divided by 123456?", (987654/321)*(654987/123456),16323.762718292612
+"How much is 135792 plus the result of 246813 multiplied by 975318 divided by 864209?", 135792+246813*975318/864209,414337.07594112074
+"What is 98765 minus the product of 43210 and 5 plus the product of 6789 and 12?", 98765-43210*5+6789*12,-35817.0
+"Find the product of 111, 222 and the sum of 333 and 444?", 111*222*(333+444),19146834.0
+"Calculate 987654321 divided by 123456 times 789 plus 321?", 987654321/123456*789+321,6312361.397137442
+"What's the sum of 987 times 654, 321 times 654 and 987 times 321?", 987*654+321*654+987*321,1172259.0
+"What is 9876 minus 5432 minus 1098 plus 7654 minus 3210?", 9876-5432-1098+7654-3210,7790.0
+"Compute the product of the sum of 135 and 246, the sum of 357 and 468, and the sum of 579 and 680?", (135+246)*(357+468)*(579+680),395735175.0
+"Calculate the sum of 987654 divided by 321 and 654321 divided by 987?", (987654/321)+(654321/987),3739.7429480442006
+"How much is 12345 plus 67890 plus the product of 12345 and 67890?", 12345+67890+12345*67890,838182285.0
+"What is 98765 minus 43210 plus the product of 98765 and 43210?", 98765-43210+98765*43210,4267691205.0
+"Find the product of 123456 and 654321 divided by 789456?", 123456*654321/789456,102323.43965464826
+"Calculate 987654321 divided by 123456789 plus the product of 987654321 and 123456789?", 987654321/123456789+987654321*123456789,1.2193263111263528e+17
+"What's the result of 1357 times 2468 plus 9753 times 8642?", 1357*2468+9753*8642,87634502.0
+"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555?", 9999-8888+7777-6666+5555,7777.0
+"Compute the result of the sum of 1111 and 2222, multiplied by the sum of 3333 and 4444, divided by the sum of 5555 and 6666?", (1111+2222)*(3333+4444)/(5555+6666),2121.0
+"Calculate the result of 987654 divided by 321, multiplied by the result of 654 divided by 987, plus the result of 123 divided by 456?", (987654/321)*(654/987)+(123/456),2039.0029129918653
+"How much is 135792 plus 246813 plus 975318 plus 864209 plus 753198?", 135792+246813+975318+864209+753198,2975330.0
+"What is 999888 minus 777666 minus 555444 minus 333222 minus 111000?", 999888-777666-555444-333222-111000,-777444.0
+"Find the product of 11, 22, 33, 44, 55 and 66?", 11*22*33*44*55*66,1275523920.0
+"Calculate 987654321 divided by 123 divided by 456 divided by 789?", 987654321/123/456/789,22.31814068115666
+"What's the sum of 1234 times 5678, 8765 times 4321 and 1357 times 9753?", 1234*5678+8765*4321+1357*9753,58115038.0
+"What is 98765 minus 43210 minus 12345 minus 67890 minus 54321?", 98765-43210-12345-67890-54321,-79001.0
+"Compute the result of the sum of 135 and 246, multiplied by the sum of 357 and 468, divided by the sum of 579 and 680?", (135+246)*(357+468)/(579+680),249.66243050039714
+"Calculate the result of 987654 divided by 321, multiplied by the result of 654321 divided by 987, multiplied by the result of 123456 divided by 789?", (987654/321)*(654321/987)*(123456/789),319160178.4517319
+"Find the product of the sum of 1, 2, 3, the sum of 4, 5, 6 and the sum of 7, 8, 9?", (1+2+3)*(4+5+6)*(7+8+9),2160.0
+"Calculate the sum of 987654321 divided by 123456789 added to itself twice more?", (987654321/123456789)+(987654321/123456789)+(987654321/123456789),24.000000218700002
+"What's the result of 135 times 246 plus 357 times 468 plus 579 times 680 plus 791 times 802?", 135*246+357*468+579*680+791*802,1228388.0
+"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333?", 9999-8888+7777-6666+5555-4444+3333,6666.0
+"Compute the sum of 12 times 34 and 56 times 78, minus the product of 90 and 12, plus the product of 34 and 56?", (12*34)+(56*78)-(90*12)+(34*56),5600.0
+"Calculate the result of 987654 divided by 321, multiplied by the result of 654987 divided by 123456, plus the result of 789012 divided by 345678?", (987654/321)*(654987/123456)+(789012/345678),16326.045223977093
+"How much is 135792 plus 246813 plus 975318 minus 864209 minus 753198?", 135792+246813+975318-864209-753198,-259484.0
+"What is 98765 minus 43210 plus 12345 minus 67890 plus 54321?", 98765-43210+12345-67890+54321,54331.0
+"Find the product of 111, 222 and 333 divided by the product of 444 and 555?", 111*222*333/(444*555),33.3
+"Calculate 987654321 divided by 123456 times 789012 divided by 345678?", 987654321/123456*789012/345678,18260.162341114697
+"What's the sum of 987 times 654, 321 times 654, 987 times 321 and 654 times 321?", 987*654+321*654+987*321+654*321,1382193.0
+"What is 9876 minus 5432 minus 1098 plus 7654 minus 3210 plus 9876?", 9876-5432-1098+7654-3210+9876,17666.0
+"Compute the product of the sum of 135 and 246, the sum of 357 and 468, the sum of 579 and 680, and the sum of 791 and 802?", (135+246)*(357+468)*(579+680)*(791+802),630406133775.0
+"Calculate the sum of 987654 divided by 321, 654321 divided by 987 and 123456 divided by 789?", (987654/321)+(654321/987)+(123456/789),3896.2144309339346
+"How much is 12345 plus 67890 plus the product of 12345 and 67890 plus the product of 54321 and 9876?", 12345+67890+12345*67890+54321*9876,1374656481.0
+"What is 98765 minus 43210 plus the product of 98765 and 43210 minus the product of 12345 and 67890?", 98765-43210+98765*43210-12345*67890,3429589155.0
+"Find the product of 123456, 654321, 789012 and 210987 divided by 987654321?", 123456*654321*789012*210987/987654321,13615619237709.098
+"Calculate 987654321 divided by 123456789 plus the product of 987654321 and 123456789 minus the product of 123456789 and 987654321?", 987654321/123456789+987654321*123456789-123456789*987654321,16.0
+"What's the result of 1357 times 2468 plus 9753 times 8642 minus 1357 times 8642 minus 9753 times 2468?", 1357*2468+9753*8642-1357*8642-9753*2468,51836904.0
+"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333 minus 2222?", 9999-8888+7777-6666+5555-4444+3333-2222,4444.0
+"Compute the result of the sum of 1111 and 2222, multiplied by the sum of 3333 and 4444, divided by the sum of 5555 and 6666, multiplied by the sum of 7777 and 8888?", (1111+2222)*(3333+4444)/(5555+6666)*(7777+8888),35346465.0
+"Calculate the result of 987654 divided by 321, multiplied by 654 divided by 987, plus the result of 123 divided by 456 multiplied by 789 divided by 123?", (987654/321)*(654/987)+(123/456)*(789/123),2040.4634393076549
+"How much is 135792 plus 246813 plus 975318 plus 864209 plus 753198 plus 642087 plus 531976?", 135792+246813+975318+864209+753198+642087+531976,4149393.0
+"What is 999888 minus 777666 minus 555444 minus 333222 minus 111000 plus 999888 plus 777666?", 999888-777666-555444-333222-111000+999888+777666,1000110.0
+"Find the product of 11, 22, 33, 44, 55, 66, 77 and 88?", 11*22*33*44*55*66*77*88,8642950081920.0
+"Calculate 987654321 divided by 123, then by 456, then by 789, then by 321, then by 654, then by 987?", 987654321/123/456/789/321/654/987,1.0771050880069936e-07
+"What's the sum of 1234 times 5678, 8765 times 4321, 1357 times 9753, 2468 times 8642 and 3579 times 7531?", 1234*5678+8765*4321+1357*9753+2468*8642+3579*7531,106396943.0
+"What is 98765 minus 43210 minus 12345 minus 67890 minus 54321 plus 98765 plus 43210?", 98765-43210-12345-67890-54321+98765+43210,62974.0
+"Compute the result of the sum of 135 and 246, multiplied by the sum of 357 and 468, divided by the sum of 579 and 680, multiplied by the sum of 791 and 802, divided by the sum of 913 and 24?", (135+246)*(357+468)/(579+680)*(791+802)/(913+24),424.4527767205258
+"Calculate the result of 987654 divided by 321, multiplied by 654321 divided by 987, multiplied by 123456 divided by 789, multiplied by 654987 divided by 321?", (987654/321)*(654321/987)*(123456/789)*(654987/321),651232921506.4315
+"Find the product of the sum of 1, 2, 3, 4, the sum of 5, 6, 7, 8 and the sum of 9, 10, 11, 12?", (1+2+3+4)*(5+6+7+8)*(9+10+11+12),10920.0
+"Calculate the sum of 987654321 divided by 123456789 added to itself three more times?", (987654321/123456789)+(987654321/123456789)+(987654321/123456789)+(987654321/123456789),32.0000002916
+"What's the result of 135 times 246 plus 357 times 468 plus 579 times 680 plus 791 times 802 plus 913 times 24 plus 135 times 468?", 135*246+357*468+579*680+791*802+913*24+135*468,1313480.0
+"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333 minus 2222 plus 1111?", 9999-8888+7777-6666+5555-4444+3333-2222+1111,5555.0
+"Compute the sum of 12 times 34 and 56 times 78, minus the product of 90 and 12, plus the product of 34 and 56, minus the product of 78 and 90, plus the product of 12 and 56?", (12*34)+(56*78)-(90*12)+(34*56)-(78*90)+(12*56),-748.0
+"Calculate the result of 987654 divided by 321, multiplied by 654987 divided by 123456, plus the result of 789012 divided by 345678 multiplied by 456789 divided by 987654?", (987654/321)*(654987/123456)+(789012/345678)*(456789/987654),16324.818374918423
+"How much is 135792 plus 246813 plus 975318 minus 864209 minus 753198 plus 642087 plus 531976 minus 420865?", 135792+246813+975318-864209-753198+642087+531976-420865,493714.0
+"What is 98765 minus 43210 plus 12345 minus 67890 plus 54321 minus 98765 plus 43210?", 98765-43210+12345-67890+54321-98765+43210,-1224.0
+"Find the product of 111, 222, 333 divided by the product of 444, 555 and 666?", 111*222*333/(444*555*666),0.05
+"Calculate 987654321 divided by 123456 times 789012 divided by 345678 times 901234 divided by 567890?", 987654321/123456*789012/345678*901234/567890,28978.638728155387
+"What's the sum of 987 times 654, 321 times 654, 987 times 321, 654 times 321, 123 times 987 and 456 times 789?", 987*654+321*654+987*321+654*321+123*987+456*789,1863378.0
+"What is 9876 minus 5432 minus 1098 plus 7654 minus 3210 plus 9876 minus 5432 plus 1098?", 9876-5432-1098+7654-3210+9876-5432+1098,13332.0
+"Compute the product of the sum of 135 and 246, the sum of 357 and 468, the sum of 579 and 680, the sum of 791 and 802, the sum of 913 and 24, and the sum of 135 and 357?", (135+246)*(357+468)*(579+680)*(791+802)*(913+24)*(135+357),2.906197492948101e+17
+"Calculate the sum of 987654 divided by 321, 654321 divided by 987, 123456 divided by 789, 654987 divided by 321 and 987123 divided by 654?", (987654/321)+(654321/987)+(123456/789)+(654987/321)+(987123/654),7446.03476018027
+"How much is 12345 plus 67890 plus the product of 12345 and 67890 plus the product of 54321 and 9876 plus the product of 13579 and 97531 plus the product of 24680 and 86420?", 12345+67890+12345*67890+54321*9876+13579*97531+24680*86420,4831875530.0
+"What is 98765 minus 43210 plus the product of 98765 and 43210 minus the product of 12345 and 67890 plus the product of 54321 and 9876 minus the product of 13579 and 97531?", 98765-43210+98765*43210-12345*67890+54321*9876-13579*97531,2641689902.0
+"Find the product of 123456, 654321, 789012 and 210987 divided by 987654321 multiplied by 123456789 divided by 987654321?", 123456*654321*789012*210987/987654321*123456789/987654321,1701952389204.596
+"Calculate 987654321 divided by 123456789 plus the product of 987654321 and 123456789 minus the product of 123456789 and 987654321 plus 987654321 divided by 123456789?", 987654321/123456789+987654321*123456789-123456789*987654321+987654321/123456789,24.0000000729
+"What's the result of 1357 times 2468 plus 9753 times 8642 minus 1357 times 8642 minus 9753 times 2468 plus 1357 times 9753 plus 2468 times 8642?", 1357*2468+9753*8642-1357*8642-9753*2468+1357*9753+2468*8642,86400181.0
+"What is 9999 minus 8888 plus 7777 minus 6666 plus 5555 minus 4444 plus 3333 minus 2222 plus 1111 minus 9999 plus 8888?", 9999-8888+7777-6666+5555-4444+3333-2222+1111-9999+8888,4444.0
+"Compute the result of the sum of 1111 and 2222, multiplied by the sum of 3333 and 4444, divided by the sum of 5555 and 6666, multiplied by the sum of 7777 and 8888, divided by the sum of 9999 and 1111?", (1111+2222)*(3333+4444)/(5555+6666)*(7777+8888)/(9999+1111),3181.5
+"Calculate the result of 987654 divided by 321, multiplied by 654 divided by 987, plus the result of 123 divided by 456 multiplied by 789 divided by 123, minus the result of 321 divided by 654 multiplied by 987 divided by 321?", (987654/321)*(654/987)+(123/456)*(789/123)-(321/654)*(987/321),2038.9542649957282
+"How much is 135792 plus 246813 plus 975318 plus 864209 plus 753198 plus 642087 plus 531976 plus 420865 plus 310754 plus 200643?", 135792+246813+975318+864209+753198+642087+531976+420865+310754+200643,5081655.0
+"What is 999888 minus 777666 minus 555444 minus 333222 minus 111000 plus 999888 plus 777666 plus 555444 plus 333222 plus 111000?", 999888-777666-555444-333222-111000+999888+777666+555444+333222+111000,1999776.0
+"Find the product of 11, 22, 33, 44, 55, 66, 77, 88, 99 and 11?", 11*22*33*44*55*66*77*88*99*11,9412172639210880.0
+"Calculate 987654321 divided by 123, then by 456, then by 789, then by 321, then by 654, then by 987, then by 123, then by 456, then by 789?", 987654321/123/456/789/321/654/987/123/456/789,2.433947016825709e-15
+"What's the sum of 1234 times 5678, 8765 times 4321, 1357 times 9753, 2468 times 8642, 3579 times 7531 and 4680 times 6420?", 1234*5678+8765*4321+1357*9753+2468*8642+3579*7531+4680*6420,136442543.0
+"What is 98765 minus 43210 minus 12345 minus 67890 minus 54321 plus 98765 plus 43210 plus 12345 plus 67890 plus 54321?", 98765-43210-12345-67890-54321+98765+43210+12345+67890+54321,197530.0
+"Compute the result of the sum of 135 and 246, multiplied by the sum of 357 and 468, divided by the sum of 579 and 680, multiplied by the sum of 791 and 802, divided by the sum of 913 and 24, multiplied by the sum of 135 and 246, divided by the sum of 357 and 468?", (135+246)*(357+468)/(579+680)*(791+802)/(913+24)*(135+246)/(357+468),196.0200096127519
+"Calculate the result of 987654 divided by 321, multiplied by 654321 divided by 987, multiplied by 123456 divided by 789, multiplied by 654987 divided by 321, multiplied by 987123 divided by 654, multiplied by 321987 divided by 123?", (987654/321)*(654321/987)*(123456/789)*(654987/321)*(987123/654)*(321987/123),2.5731381049177907e+18
 "What is 375 times 218?",375*218,81750.0
 "Calculate 9742 divided by 17",9742/17,573.0588235294117
 "What's the result of 5632 plus 8921?",5632+8921,14553.0
