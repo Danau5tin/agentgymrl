@@ -24,8 +24,13 @@ class Phi4MiniInstructTokenHandler(TokenHandler):
         should_train_on: bool = False
     ) -> None:
         """Start a new conversation sequence"""
-        messages = [
-            {'role': 'system', 'content': sys_msg, 'tools': json.dumps(tools)},
+        if len(tools) == 0:  # useful if tools are pre-injected into the system message
+            messages = [
+                {'role': 'system', 'content': sys_msg},
+            ]
+        else:
+            messages = [
+                {'role': 'system', 'content': sys_msg, 'tools': json.dumps(tools)},
         ]
         new_tokens = self.tokenizer.apply_chat_template(messages, tokenize=True)
         if new_tokens[-1] != self.eos_token_id:
