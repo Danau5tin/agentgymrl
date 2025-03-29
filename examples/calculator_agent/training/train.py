@@ -32,7 +32,7 @@ if __name__ == "__main__":
         tools=[], # Already injected in the system message
         temperature=0.9,
         max_env_calls=20,
-        max_new_tokens=1000,
+        max_new_tokens=500,
     )
     reporting_config = ReportingConfig.create_wandb(report_every_n_steps=10)
 
@@ -62,16 +62,15 @@ if __name__ == "__main__":
     peft_config = None
     if use_peft:
         from peft import LoraConfig
-        peft_config = {
-            "r": 16,
-            "lora_alpha": 32,
-            "lora_dropout": 0.05,
-            "bias": "none",
-            "task_type": "CAUSAL_LM",
-            "target_modules": "all-linear",
-            "modules_to_save": None,
-        }
-        peft_conf = LoraConfig(**peft_config)
+        peft_config = LoraConfig(
+            peft_type="LORA",
+            task_type="CAUSAL_LM",
+            r=16,
+            target_modules=["q_proj", "k_proj", "v_proj", "up_proj", "gate_proj", "o_proj", "down_proj"],
+            lora_alpha=32,
+            lora_dropout=0.1,
+            bias="none",
+        )
 
     training_config = TrainingConfig(
         hf_model_name=model_name,
