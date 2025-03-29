@@ -41,6 +41,9 @@ You should evaluate the assistant's decision to use the calculator, its translat
 - Example arguments for `5 * (2828 + 1)` (Nested):
   `{"expression": {"operation": "multiply", "operands": [5, {"operation": "add", "operands": [2828, 1]}]}}`
 
+### Note
+If the model gave an apparently correct tool call syntax, but there was no output and no error. This means the tool call was not able to be parsed and therefore it was invalid syntax.
+
 ### Assistant's final answer format:
 - *The final number* in the assistant's response should accurately reflect the result to returned by the calculator tool for the *intended* calculation.
 
